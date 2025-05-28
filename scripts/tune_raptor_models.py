@@ -8,12 +8,10 @@ import xgboost as xgb
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split, RandomizedSearchCV, KFold, TimeSeriesSplit
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from sklearn.preprocessing import StandardScaler
 import joblib
 import time
 from scipy.stats import randint, uniform
 from fuzzywuzzy import fuzz, process
-from itertools import combinations
 
 # Define stats that should NOT be used as features
 excluded_features = {
@@ -23,57 +21,6 @@ excluded_features = {
     "SecondsPlayed", "Minutes", "TotalPoss", "OffPoss", "DefPoss",
     "PenaltyOffPoss", "PenaltyDefPoss", "SecondChanceOffPoss",
 }
-
-def engineer_features(df, selected_features):
-    """
-    Engineer new features including interactions and rolling statistics.
-    
-    Args:
-        df: DataFrame with original features
-        selected_features: List of important features to focus on
-    
-    Returns:
-        DataFrame with engineered features
-    """
-    print("\nEngineering features...")
-    engineered_df = df.copy()
-    
-    # Scale numerical features
-    scaler = StandardScaler()
-    engineered_df[selected_features] = scaler.fit_transform(engineered_df[selected_features])
-    
-    # Create interaction terms between top features
-    top_features = selected_features[:10]  # Use top 10 features for interactions
-    for feat1, feat2 in combinations(top_features, 2):
-        interaction_name = f"interaction_{feat1}_{feat2}"
-        engineered_df[interaction_name] = engineered_df[feat1] * engineered_df[feat2]
-    
-    # Create ratio features for relevant pairs
-    scoring_features = [f for f in selected_features if 'Points' in f or 'Score' in f or 'FG' in f]
-    attempt_features = [f for f in selected_features if 'Attempts' in f or 'FGA' in f]
-    
-    for score_feat in scoring_features:
-        for attempt_feat in attempt_features:
-            ratio_name = f"ratio_{score_feat}_{attempt_feat}"
-            engineered_df[ratio_name] = engineered_df[score_feat] / (engineered_df[attempt_feat] + 1e-6)
-    
-    # Create rolling averages by season
-    if 'season' in df.columns:
-        engineered_df = engineered_df.sort_values('season')
-        for feature in selected_features:
-            roll_name = f"rolling_avg_3_{feature}"
-            engineered_df[roll_name] = engineered_df.groupby('season')[feature].transform(
-                lambda x: x.rolling(3, min_periods=1).mean()
-            )
-    
-    # Drop any features with too many missing values
-    engineered_df = engineered_df.dropna(axis=1, thresh=len(engineered_df) * 0.95)
-    
-    # Fill remaining missing values with 0
-    engineered_df = engineered_df.fillna(0)
-    
-    print(f"Added {len(engineered_df.columns) - len(df.columns)} new features")
-    return engineered_df
 
 def select_features(X, y, n_features=30):
     """
@@ -331,33 +278,27 @@ def main():
     player_df = pd.DataFrame(all_player_data)
     
     # Define features and targets
-    X = player_df.drop(['raptor_offense', 'raptor_defense'], axis=1)
+    X = player_df.drop(['raptor_offense', 'raptor_defense', 'season'], axis=1)
     y_offense = player_df['raptor_offense']
     y_defense = player_df['raptor_defense']
     
     # Perform feature selection
     print("\nSelecting features for offensive model...")
-    offensive_features = select_features(X.drop('season', axis=1), y_offense)
+    offensive_features = select_features(X, y_offense)
     print("\nSelecting features for defensive model...")
-    defensive_features = select_features(X.drop('season', axis=1), y_defense)
+    defensive_features = select_features(X, y_defense)
     
-    # Engineer features
-    X_off = engineer_features(X, offensive_features)
-    X_def = engineer_features(X, defensive_features)
-    
-    # Save selected and engineered features
-    feature_info = {
-        'offensive': {
-            'selected_features': offensive_features,
-            'engineered_features': X_off.columns.tolist()
-        },
-        'defensive': {
-            'selected_features': defensive_features,
-            'engineered_features': X_def.columns.tolist()
-        }
+    # Save selected features
+    feature_selection = {
+        'offensive_features': offensive_features,
+        'defensive_features': defensive_features
     }
-    with open('models/feature_info.json', 'w') as f:
-        json.dump(feature_info, f, indent=2)
+    with open('models/selected_features.json', 'w') as f:
+        json.dump(feature_selection, f, indent=2)
+    
+    # Use selected features
+    X_off = X[offensive_features]
+    X_def = X[defensive_features]
     
     # Create train/validation/test split for offensive model
     X_off_train, X_off_temp, y_off_train, y_off_temp = train_test_split(
@@ -375,7 +316,7 @@ def main():
     print(f"Validation set size: {len(X_off_val)}")
     print(f"Test set size: {len(X_off_test)}")
     
-    # Tune and train models with engineered features
+    # Tune and train models with selected features
     off_model, off_params, off_train_metrics, off_val_metrics = tune_model(
         X_off_train, y_off_train, X_off_val, y_off_val, "Offensive")
     
