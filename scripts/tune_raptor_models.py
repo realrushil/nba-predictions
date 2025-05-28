@@ -6,23 +6,14 @@ import glob
 from pathlib import Path
 import xgboost as xgb
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split, GridSearchCV, KFold
+from sklearn.model_selection import train_test_split, RandomizedSearchCV, KFold, TimeSeriesSplit
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+from sklearn.preprocessing import StandardScaler
 import joblib
 import time
-
-# Make sure models directory exists
-models_dir = Path("models")
-models_dir.mkdir(exist_ok=True)
-
-# Load RAPTOR ratings
-raptor_df = pd.read_csv('data/raptor/modern_RAPTOR_by_player.csv')
-
-# Clean player_id and season to use as a key
-raptor_df['player_season'] = raptor_df['player_id'] + '_' + raptor_df['season'].astype(str)
-
-# Get target variables
-raptor_targets = raptor_df[['player_season', 'raptor_offense', 'raptor_defense']]
+from scipy.stats import randint, uniform
+from fuzzywuzzy import fuzz, process
+from itertools import combinations
 
 # Define stats that should NOT be used as features
 excluded_features = {
@@ -33,220 +24,397 @@ excluded_features = {
     "PenaltyOffPoss", "PenaltyDefPoss", "SecondChanceOffPoss",
 }
 
-print("Loading and preparing data...")
-# Load normalized player statistics and combine them with RAPTOR ratings
-all_player_data = []
-
-for json_file in glob.glob("data/normalized/totals_*.json"):
-    season = os.path.basename(json_file).replace('totals_', '').replace('.json', '')
+def engineer_features(df, selected_features):
+    """
+    Engineer new features including interactions and rolling statistics.
     
-    with open(json_file, 'r') as f:
-        data = json.load(f)
+    Args:
+        df: DataFrame with original features
+        selected_features: List of important features to focus on
     
-    for player in data:
-        player_id = player.get('RowId', '')
-        if not player_id:
-            continue  # Skip if no player ID
-            
-        player_season = f"{player_id}_{season}"
+    Returns:
+        DataFrame with engineered features
+    """
+    print("\nEngineering features...")
+    engineered_df = df.copy()
+    
+    # Scale numerical features
+    scaler = StandardScaler()
+    engineered_df[selected_features] = scaler.fit_transform(engineered_df[selected_features])
+    
+    # Create interaction terms between top features
+    top_features = selected_features[:10]  # Use top 10 features for interactions
+    for feat1, feat2 in combinations(top_features, 2):
+        interaction_name = f"interaction_{feat1}_{feat2}"
+        engineered_df[interaction_name] = engineered_df[feat1] * engineered_df[feat2]
+    
+    # Create ratio features for relevant pairs
+    scoring_features = [f for f in selected_features if 'Points' in f or 'Score' in f or 'FG' in f]
+    attempt_features = [f for f in selected_features if 'Attempts' in f or 'FGA' in f]
+    
+    for score_feat in scoring_features:
+        for attempt_feat in attempt_features:
+            ratio_name = f"ratio_{score_feat}_{attempt_feat}"
+            engineered_df[ratio_name] = engineered_df[score_feat] / (engineered_df[attempt_feat] + 1e-6)
+    
+    # Create rolling averages by season
+    if 'season' in df.columns:
+        engineered_df = engineered_df.sort_values('season')
+        for feature in selected_features:
+            roll_name = f"rolling_avg_3_{feature}"
+            engineered_df[roll_name] = engineered_df.groupby('season')[feature].transform(
+                lambda x: x.rolling(3, min_periods=1).mean()
+            )
+    
+    # Drop any features with too many missing values
+    engineered_df = engineered_df.dropna(axis=1, thresh=len(engineered_df) * 0.95)
+    
+    # Fill remaining missing values with 0
+    engineered_df = engineered_df.fillna(0)
+    
+    print(f"Added {len(engineered_df.columns) - len(df.columns)} new features")
+    return engineered_df
+
+def select_features(X, y, n_features=30):
+    """
+    Select the most important features using XGBoost's feature importance.
+    
+    Args:
+        X: Feature DataFrame
+        y: Target variable
+        n_features: Number of features to select
         
-        # Create feature dict excluding non-feature stats
-        player_features = {k: v for k, v in player.items() if k not in excluded_features and isinstance(v, (int, float))}
-        
-        # Add player_season key to join with RAPTOR data
-        player_features['player_season'] = player_season
-        all_player_data.append(player_features)
+    Returns:
+        list: Selected feature names
+    """
+    print("\nPerforming feature selection...")
+    # Train a simple XGBoost model
+    model = xgb.XGBRegressor(
+        n_estimators=100,
+        learning_rate=0.1,
+        max_depth=3,
+        random_state=42
+    )
+    model.fit(X, y)
+    
+    # Get feature importance scores
+    importance_scores = model.feature_importances_
+    feature_importance = pd.DataFrame({
+        'feature': X.columns,
+        'importance': importance_scores
+    })
+    feature_importance = feature_importance.sort_values('importance', ascending=False)
+    
+    # Select top features
+    selected_features = feature_importance['feature'].head(n_features).tolist()
+    
+    # Plot feature importance
+    plt.figure(figsize=(12, 6))
+    plt.bar(range(len(importance_scores)), feature_importance['importance'])
+    plt.xticks(range(len(importance_scores)), feature_importance['feature'], rotation=90)
+    plt.title('Feature Importance Scores')
+    plt.tight_layout()
+    plt.savefig('models/initial_feature_importance.png')
+    plt.close()
+    
+    print(f"\nTop {n_features} features selected:")
+    for i, (feature, importance) in enumerate(feature_importance.head(n_features).values, 1):
+        print(f"{i}. {feature}: {importance:.4f}")
+    
+    return selected_features
 
-# Convert to DataFrame
-player_df = pd.DataFrame(all_player_data)
+def create_param_distributions():
+    """
+    Create parameter distributions for randomized search.
+    Using distributions instead of fixed values allows for more thorough exploration.
+    """
+    param_dist = {
+        'n_estimators': randint(50, 500),  # Wider range for number of trees
+        'learning_rate': uniform(0.01, 0.3),  # Continuous distribution for learning rate
+        'max_depth': randint(3, 10),
+        'min_child_weight': randint(1, 7),
+        'subsample': uniform(0.6, 0.4),  # Range from 0.6 to 1.0
+        'colsample_bytree': uniform(0.6, 0.4),  # Range from 0.6 to 1.0
+        'gamma': uniform(0, 0.5),
+        'reg_alpha': uniform(0, 1),  # L1 regularization
+        'reg_lambda': uniform(0, 1)   # L2 regularization
+    }
+    return param_dist
 
-# Merge with RAPTOR targets
-merged_df = pd.merge(player_df, raptor_targets, on='player_season', how='inner')
-print(f"Total matched player-seasons: {len(merged_df)}")
+def evaluate_model(model, X, y, prefix=""):
+    """
+    Evaluate model performance with multiple metrics
+    """
+    pred = model.predict(X)
+    rmse = np.sqrt(mean_squared_error(y, pred))
+    mae = mean_absolute_error(y, pred)
+    r2 = r2_score(y, pred)
+    
+    print(f"{prefix} Metrics:")
+    print(f"RMSE: {rmse:.4f}")
+    print(f"MAE: {mae:.4f}")
+    print(f"R²: {r2:.4f}")
+    return {"rmse": rmse, "mae": mae, "r2": r2}
 
-# Drop player_season from features
-X = merged_df.drop(['player_season', 'raptor_offense', 'raptor_defense'], axis=1)
-y_offense = merged_df['raptor_offense']
-y_defense = merged_df['raptor_defense']
+def find_best_match(name, choices, min_score=85):
+    """Find the best matching name from choices using fuzzy matching"""
+    if not choices:
+        return None
+    best_match = process.extractOne(name, choices, scorer=fuzz.token_sort_ratio)
+    if best_match and best_match[1] >= min_score:
+        return best_match[0]
+    return None
 
-# Save the feature names for later use
-feature_names = X.columns.tolist()
-joblib.dump(feature_names, 'models/feature_names.pkl')
-
-# Split data
-X_train, X_test, y_off_train, y_off_test = train_test_split(X, y_offense, test_size=0.2, random_state=42)
-_, _, y_def_train, y_def_test = train_test_split(X, y_defense, test_size=0.2, random_state=42)
-
-print(f"Number of features: {X.shape[1]}")
-
-# Define hyperparameter grid
-param_grid = {
-    'n_estimators': [50, 100, 200],
-    'learning_rate': [0.01, 0.05, 0.1, 0.2],
-    'max_depth': [3, 5, 7],
-    'subsample': [0.6, 0.8, 1.0],
-    'colsample_bytree': [0.6, 0.8, 1.0],
-    'min_child_weight': [1, 3, 5]
-}
-
-# Function to tune model and return best parameters
-def tune_model(X, y, param_grid, model_type):
+def tune_model(X_train, y_train, X_val, y_val, model_type="Offensive"):
+    """
+    Tune XGBoost model using randomized search with cross-validation
+    """
     print(f"\nTuning {model_type} RAPTOR model...")
     start_time = time.time()
     
     # Create base model
-    model = xgb.XGBRegressor(objective='reg:squarederror', random_state=42)
-    
-    # Create cross-validation
-    cv = KFold(n_splits=5, shuffle=True, random_state=42)
-    
-    # Create grid search
-    grid_search = GridSearchCV(
-        estimator=model,
-        param_grid=param_grid,
-        scoring='neg_mean_squared_error',
-        cv=cv,
-        verbose=1,
-        n_jobs=-1
+    base_model = xgb.XGBRegressor(
+        objective='reg:squarederror',
+        random_state=42,
+        n_jobs=-1,  # Use all CPU cores
+        early_stopping_rounds=20  # Add early stopping here
     )
     
-    # Fit grid search
-    grid_search.fit(X, y)
+    # Get parameter distributions
+    param_dist = create_param_distributions()
     
-    # Print results
-    print(f"Best parameters: {grid_search.best_params_}")
-    print(f"Best RMSE: {np.sqrt(-grid_search.best_score_):.4f}")
-    print(f"Time elapsed: {(time.time() - start_time) / 60:.2f} minutes")
+    # Create TimeSeriesSplit for temporal cross-validation
+    # This is more appropriate for sports data where we want to predict future performance
+    tscv = TimeSeriesSplit(n_splits=5, test_size=len(X_train) // 5)
     
-    return grid_search.best_params_, grid_search.best_estimator_
-
-# Uncomment to run full hyperparameter tuning (warning: can be time-consuming)
-# Comment out these lines to use default parameters instead
-"""
-# Tune offensive RAPTOR model
-off_best_params, off_best_model = tune_model(X_train, y_off_train, param_grid, "Offensive")
-
-# Tune defensive RAPTOR model
-def_best_params, def_best_model = tune_model(X_train, y_def_train, param_grid, "Defensive")
-"""
-
-# Use reasonable default parameters instead of full tuning
-print("\nTraining models with default parameters...")
-off_best_model = xgb.XGBRegressor(
-    objective='reg:squarederror',
-    n_estimators=100,
-    learning_rate=0.1,
-    max_depth=5,
-    subsample=0.8,
-    colsample_bytree=0.8,
-    random_state=42
-)
-
-def_best_model = xgb.XGBRegressor(
-    objective='reg:squarederror',
-    n_estimators=100,
-    learning_rate=0.1,
-    max_depth=5,
-    subsample=0.8,
-    colsample_bytree=0.8,
-    random_state=42
-)
-
-# Train models
-off_best_model.fit(X_train, y_off_train, eval_set=[(X_test, y_off_test)], early_stopping_rounds=10, verbose=False)
-def_best_model.fit(X_train, y_def_train, eval_set=[(X_test, y_def_test)], early_stopping_rounds=10, verbose=False)
-
-# Evaluate models
-off_pred = off_best_model.predict(X_test)
-def_pred = def_best_model.predict(X_test)
-
-print("\nOffensive RAPTOR Model Evaluation:")
-print(f"RMSE: {np.sqrt(mean_squared_error(y_off_test, off_pred)):.4f}")
-print(f"MAE: {mean_absolute_error(y_off_test, off_pred):.4f}")
-print(f"R²: {r2_score(y_off_test, off_pred):.4f}")
-
-print("\nDefensive RAPTOR Model Evaluation:")
-print(f"RMSE: {np.sqrt(mean_squared_error(y_def_test, def_pred)):.4f}")
-print(f"MAE: {mean_absolute_error(y_def_test, def_pred):.4f}")
-print(f"R²: {r2_score(y_def_test, def_pred):.4f}")
-
-# Plot feature importance
-def plot_feature_importance(model, title, filename):
-    # Get feature importance
-    importance = model.feature_importances_
-    indices = np.argsort(importance)[-15:]  # Top 15 features
+    # Initialize RandomizedSearchCV
+    random_search = RandomizedSearchCV(
+        estimator=base_model,
+        param_distributions=param_dist,
+        n_iter=100,  # Number of parameter settings sampled
+        scoring='neg_mean_squared_error',
+        cv=tscv,
+        verbose=1,
+        random_state=42,
+        n_jobs=-1,
+        return_train_score=True
+    )
     
-    plt.figure(figsize=(12, 8))
-    plt.barh(range(len(indices)), importance[indices])
-    plt.yticks(range(len(indices)), [X.columns[i] for i in indices])
-    plt.title(title)
+    # Fit RandomizedSearchCV
+    random_search.fit(
+        X_train, 
+        y_train,
+        eval_set=[(X_val, y_val)],
+        verbose=False
+    )
+    
+    # Get best parameters and scores
+    best_params = random_search.best_params_
+    cv_results = random_search.cv_results_
+    
+    # Print detailed results
+    print(f"\nBest parameters found:")
+    for param, value in best_params.items():
+        print(f"{param}: {value}")
+    
+    print("\nCross-validation results:")
+    print(f"Mean test score: {-random_search.best_score_:.4f} MSE")
+    print(f"Standard deviation: {cv_results['std_test_score'][random_search.best_index_]:.4f}")
+    
+    # Train final model with best parameters
+    final_model = xgb.XGBRegressor(
+        objective='reg:squarederror',
+        random_state=42,
+        early_stopping_rounds=20,  # Add early stopping here too
+        **best_params
+    )
+    
+    # Add early stopping to final model
+    final_model.fit(
+        X_train, 
+        y_train,
+        eval_set=[(X_val, y_val)],
+        verbose=False
+    )
+    
+    # Evaluate final model
+    train_metrics = evaluate_model(final_model, X_train, y_train, "Training")
+    val_metrics = evaluate_model(final_model, X_val, y_val, "Validation")
+    
+    print(f"\nTime elapsed: {(time.time() - start_time) / 60:.2f} minutes")
+    
+    # Create feature importance plot
+    plt.figure(figsize=(12, 6))
+    xgb.plot_importance(final_model, max_num_features=20)
+    plt.title(f'{model_type} RAPTOR - Feature Importance')
     plt.tight_layout()
-    plt.savefig(filename)
+    plt.savefig(f'models/{model_type.lower()}_feature_importance.png')
+    plt.close()
     
-plot_feature_importance(off_best_model, 'Top 15 Features for Offensive RAPTOR Prediction', 'models/offensive_feature_importance.png')
-plot_feature_importance(def_best_model, 'Top 15 Features for Defensive RAPTOR Prediction', 'models/defensive_feature_importance.png')
+    return final_model, best_params, train_metrics, val_metrics
 
-# Save models
-off_best_model.save_model('models/offensive_raptor_model.json')
-def_best_model.save_model('models/defensive_raptor_model.json')
-
-print("\nModels and feature importance plots saved to the models directory")
-
-# Create a prediction script for future use
-prediction_script = """
-import pandas as pd
-import numpy as np
-import xgboost as xgb
-import joblib
-
-def predict_raptor(player_stats):
-    # Load models
-    off_model = xgb.XGBoost()
-    off_model.load_model('models/offensive_raptor_model.json')
+def main():
+    # Load and prepare data
+    print("Loading data...")
     
-    def_model = xgb.XGBoost()
-    def_model.load_model('models/defensive_raptor_model.json')
+    # Create the models directory if it doesn't exist
+    models_dir = Path("models")
+    models_dir.mkdir(exist_ok=True)
     
-    # Load feature names
-    feature_names = joblib.load('models/feature_names.pkl')
+    # Load RAPTOR ratings
+    raptor_df = pd.read_csv('data/raptor/modern_RAPTOR_by_player.csv')
     
-    # Prepare features
-    features = pd.DataFrame([player_stats])
+    # Create season-specific player name lists for matching
+    raptor_players_by_season = {}
+    for season in raptor_df['season'].unique():
+        season_players = raptor_df[raptor_df['season'] == season]['player_name'].tolist()
+        raptor_players_by_season[str(season)] = season_players
     
-    # Align features with what model expects
-    missing_cols = set(feature_names) - set(features.columns)
-    for col in missing_cols:
-        features[col] = 0
+    # Load normalized player statistics
+    all_player_data = []
+    match_stats = {'total': 0, 'matched': 0}
     
-    features = features[feature_names]
+    for json_file in glob.glob("data/normalized/totals_*.json"):
+        with open(json_file, 'r') as f:
+            data = json.load(f)
+            
+        # Extract season from filename (e.g., 2013 from totals_2013.json)
+        file_season = os.path.basename(json_file).replace('totals_', '').replace('.json', '')
+        # Convert to RAPTOR season format (e.g., 2013 -> 2014)
+        raptor_season = str(int(file_season) + 1)
+        
+        # Get RAPTOR players for this season
+        raptor_players = raptor_players_by_season.get(raptor_season, [])
+        if not raptor_players:
+            print(f"No RAPTOR data for season {raptor_season}, skipping {file_season}")
+            continue
+            
+        print(f"Processing season {file_season} (RAPTOR season {raptor_season})")
+        
+        for player in data:
+            match_stats['total'] += 1
+            player_name = player.get('Name', '')
+            if not player_name:
+                continue
+                
+            # Find matching RAPTOR player name
+            raptor_name = find_best_match(player_name, raptor_players)
+            if not raptor_name:
+                continue
+                
+            # Get RAPTOR ratings for this player-season
+            raptor_data = raptor_df[
+                (raptor_df['player_name'] == raptor_name) & 
+                (raptor_df['season'] == int(raptor_season))
+            ].iloc[0]
+            
+            # Create feature dict excluding non-feature stats
+            player_features = {k: v for k, v in player.items() 
+                             if k not in excluded_features and isinstance(v, (int, float))}
+            
+            # Add RAPTOR ratings
+            player_features['raptor_offense'] = raptor_data['raptor_offense']
+            player_features['raptor_defense'] = raptor_data['raptor_defense']
+            player_features['season'] = int(file_season)
+            
+            all_player_data.append(player_features)
+            match_stats['matched'] += 1
     
-    # Make predictions
-    offensive_raptor = off_model.predict(features)[0]
-    defensive_raptor = def_model.predict(features)[0]
+    print(f"\nMatched {match_stats['matched']} of {match_stats['total']} player-seasons "
+          f"({match_stats['matched']/match_stats['total']*100:.1f}%)")
     
-    return {
-        "offensive_raptor": offensive_raptor,
-        "defensive_raptor": defensive_raptor,
-        "total_raptor": offensive_raptor + defensive_raptor
+    if not all_player_data:
+        print("Error: No matched player data found!")
+        return
+    
+    # Convert to DataFrame
+    player_df = pd.DataFrame(all_player_data)
+    
+    # Define features and targets
+    X = player_df.drop(['raptor_offense', 'raptor_defense'], axis=1)
+    y_offense = player_df['raptor_offense']
+    y_defense = player_df['raptor_defense']
+    
+    # Perform feature selection
+    print("\nSelecting features for offensive model...")
+    offensive_features = select_features(X.drop('season', axis=1), y_offense)
+    print("\nSelecting features for defensive model...")
+    defensive_features = select_features(X.drop('season', axis=1), y_defense)
+    
+    # Engineer features
+    X_off = engineer_features(X, offensive_features)
+    X_def = engineer_features(X, defensive_features)
+    
+    # Save selected and engineered features
+    feature_info = {
+        'offensive': {
+            'selected_features': offensive_features,
+            'engineered_features': X_off.columns.tolist()
+        },
+        'defensive': {
+            'selected_features': defensive_features,
+            'engineered_features': X_def.columns.tolist()
+        }
     }
-"""
+    with open('models/feature_info.json', 'w') as f:
+        json.dump(feature_info, f, indent=2)
+    
+    # Create train/validation/test split for offensive model
+    X_off_train, X_off_temp, y_off_train, y_off_temp = train_test_split(
+        X_off, y_offense, test_size=0.3, random_state=42)
+    X_off_val, X_off_test, y_off_val, y_off_test = train_test_split(
+        X_off_temp, y_off_temp, test_size=0.5, random_state=42)
+    
+    # Create train/validation/test split for defensive model
+    X_def_train, X_def_temp, y_def_train, y_def_temp = train_test_split(
+        X_def, y_defense, test_size=0.3, random_state=42)
+    X_def_val, X_def_test, y_def_val, y_def_test = train_test_split(
+        X_def_temp, y_def_temp, test_size=0.5, random_state=42)
+    
+    print(f"\nTraining set size: {len(X_off_train)}")
+    print(f"Validation set size: {len(X_off_val)}")
+    print(f"Test set size: {len(X_off_test)}")
+    
+    # Tune and train models with engineered features
+    off_model, off_params, off_train_metrics, off_val_metrics = tune_model(
+        X_off_train, y_off_train, X_off_val, y_off_val, "Offensive")
+    
+    def_model, def_params, def_train_metrics, def_val_metrics = tune_model(
+        X_def_train, y_def_train, X_def_val, y_def_val, "Defensive")
+    
+    # Final evaluation on test set
+    print("\nFinal Test Set Evaluation:")
+    off_test_metrics = evaluate_model(off_model, X_off_test, y_off_test, "Offensive Test")
+    def_test_metrics = evaluate_model(def_model, X_def_test, y_def_test, "Defensive Test")
+    
+    # Save models and parameters
+    off_model.save_model('models/offensive_raptor_model.json')
+    def_model.save_model('models/defensive_raptor_model.json')
+    
+    # Save hyperparameters and metrics
+    results = {
+        'offensive_model': {
+            'parameters': off_params,
+            'metrics': {
+                'train': off_train_metrics,
+                'validation': off_val_metrics,
+                'test': off_test_metrics
+            }
+        },
+        'defensive_model': {
+            'parameters': def_params,
+            'metrics': {
+                'train': def_train_metrics,
+                'validation': def_val_metrics,
+                'test': def_test_metrics
+            }
+        }
+    }
+    
+    with open('models/tuning_results.json', 'w') as f:
+        json.dump(results, f, indent=2)
+    
+    print("\nModels, parameters, and results saved to the models directory")
 
-with open('scripts/predict_raptor.py', 'w') as f:
-    f.write(prediction_script)
-
-print("\nPrediction script created at 'scripts/predict_raptor.py'")
-print("\nHyperparameter Tuning Recommendations:")
-print("""
-To fully tune these models, uncomment the hyperparameter tuning section in this script.
-This will perform a grid search over the following parameters:
-
-1. n_estimators: [50, 100, 200] - Controls number of boosting rounds
-2. learning_rate: [0.01, 0.05, 0.1, 0.2] - Step size shrinkage
-3. max_depth: [3, 5, 7] - Maximum depth of trees
-4. subsample: [0.6, 0.8, 1.0] - Subsample ratio of training instances
-5. colsample_bytree: [0.6, 0.8, 1.0] - Subsample ratio of columns when building trees
-6. min_child_weight: [1, 3, 5] - Minimum sum of instance weight needed in a child
-
-Note: Full hyperparameter tuning can take several hours depending on your hardware.
-You may want to run this overnight or on a machine with significant computing power.
-""") 
+if __name__ == "__main__":
+    main() 
