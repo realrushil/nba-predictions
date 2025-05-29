@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Player Rankings</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff9800;
+            --secondary-color: #333;
+            --light-bg: #fff9e6;
+            --dark-bg: #222;
+            --card-light: #fff;
+            --card-dark: #2a2a2a;
+            --text-light: #333;
+            --text-dark: #fff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: var(--light-bg);
+            padding: 0;
+            margin: 0;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--text-dark);
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark-mode .header {
+            background-color: var(--secondary-color);
+        }
+        
+        .header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 80% 40%, rgba(255,255,255,0.2), transparent 60%);
+            z-index: 1;
+        }
+        
+        .header .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .year-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        
+        .year-tab {
+            padding: 10px 30px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .year-tab.active, .year-tab:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .player-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            background-color: var(--card-light);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+        }
+        
+        .dark-mode .player-row {
+            background-color: var(--card-dark);
+        }
+        
+        .player-row:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        }
+        
+        .player-rank {
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 40px;
+            text-align: center;
+        }
+        
+        .player-image-container {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .player-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #eee;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        
+        .player-initials {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .dark-mode .player-image, .dark-mode .player-initials {
+            border-color: var(--secondary-color);
+        }
+        
+        .player-info {
+            flex-grow: 1;
+        }
+        
+        .player-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        
+        .player-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .player-metric {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 80px;
+            padding: 8px;
+            border-radius: 12px;
+            background-color: rgba(0,0,0,0.05);
+        }
+        
+        .dark-mode .player-metric {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .metric-value {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+        
+        .metric-positive {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .metric-negative {
+            color: #f44336;
+            font-weight: bold;
+        }
+        
+        .total-raptor {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .dark-mode .total-raptor {
+            background-color: #ff9800;
+            color: var(--text-light);
+        }
+        
+        .filter-controls {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background-color: var(--card-light);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+        
+        .dark-mode .filter-controls {
+            background-color: var(--card-dark);
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .dark-mode .theme-toggle {
+            background-color: var(--secondary-color);
+        }
+        
+        .top-players-card {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            background-color: var(--card-light);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .dark-mode .top-players-card {
+            background-color: var(--card-dark);
+        }
+        
+        .top-players-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+        
+        .dark-mode .top-players-header {
+            background-color: var(--secondary-color);
+        }
+        
+        .top-players-body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="text-center text-white mb-3">NBA Player Rankings</h1>
+            <p class="text-center text-white opacity-75 mb-4">Advanced Performance Metrics</p>
+            
+            <div class="year-tabs">
+                {% for year in years %}
+                <a href="/?year={{ year }}&limit={{ limit }}" class="year-tab {% if year == selected_year %}active{% endif %}">{{ year }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="filter-controls mb-4">
+                    <form method="get" action="/" class="row g-3">
+                        <input type="hidden" name="year" value="{{ selected_year }}">
+                        <div class="col-12">
+                            <label for="metric" class="form-label">Filter by:</label>
+                            <select name="metric" id="metric" class="form-select" onchange="this.form.submit()">
+                                <option value="overall" {% if metric == 'overall' %}selected{% endif %}>Overall</option>
+                                <option value="offense" {% if metric == 'offense' %}selected{% endif %}>Offense</option>
+                                <option value="defense" {% if metric == 'defense' %}selected{% endif %}>Defense</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="top-players-card">
+                    <div class="top-players-header">
+                        <h5 class="m-0">Top 100 Players - Performance Metrics</h5>
+                    </div>
+                    <div class="top-players-body">
+                        {% for player in players[:100] %}
+                        <div class="player-row">
+                            <div class="player-rank">{{ loop.index }}</div>
+                            <div class="player-image-container">
+                                <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/{{ player.player_id }}.png" 
+                                     alt="{{ player.player_name }}" 
+                                     class="player-image"
+                                     onload="if(this.parentNode.querySelector('.player-initials')) this.parentNode.querySelector('.player-initials').remove()"
+                                     onerror="this.style.display='none'">
+                                <div class="player-initials" title="{{ player.player_name }}">
+                                    {{ player.player_name.split(' ')|map('first')|join('') }}
+                                </div>
+                            </div>
+                            <div class="player-info">
+                                <div class="player-name">
+                                    <a href="/player/{{ player.player_name }}?year={{ selected_year }}" class="text-decoration-none">
+                                        {{ player.player_name }}
+                                    </a>
+                                </div>
+                                <div class="player-stats">
+                                    <span class="{% if player.offensive_raptor > 0 %}metric-positive{% else %}metric-negative{% endif %}">
+                                        OFF: {{ player.offensive_raptor|round(1) }}
+                                    </span>
+                                    <span class="{% if player.defensive_raptor > 0 %}metric-positive{% else %}metric-negative{% endif %}">
+                                        DEF: {{ player.defensive_raptor|round(1) }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="player-metric total-raptor">
+                                <div class="metric-value">{{ player.total_raptor|round(1) }}</div>
+                                <div class="metric-label">OVR</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="theme-toggle" id="themeToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" id="darkIcon">
+            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" id="lightIcon" style="display: none;">
+            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dark mode toggle
+            const themeToggle = document.getElementById('themeToggle');
+            const darkIcon = document.getElementById('darkIcon');
+            const lightIcon = document.getElementById('lightIcon');
+            
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                
+                if (document.body.classList.contains('dark-mode')) {
+                    darkIcon.style.display = 'none';
+                    lightIcon.style.display = 'block';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    darkIcon.style.display = 'block';
+                    lightIcon.style.display = 'none';
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+            
+            // Check for saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                darkIcon.style.display = 'none';
+                lightIcon.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html> 

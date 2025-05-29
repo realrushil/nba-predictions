@@ -1,0 +1,2768 @@
+[
+  {
+    "player_name": "James Harden",
+    "offensive_raptor": 9.566047267,
+    "defensive_raptor": 1.149233882,
+    "total_raptor": 10.71528115
+  },
+  {
+    "player_name": "Paul George",
+    "offensive_raptor": 5.333638945,
+    "defensive_raptor": 4.206322803,
+    "total_raptor": 9.539961748
+  },
+  {
+    "player_name": "Nikola Jokic",
+    "offensive_raptor": 6.080263137,
+    "defensive_raptor": 2.664693182,
+    "total_raptor": 8.74495632
+  },
+  {
+    "player_name": "Stephen Curry",
+    "offensive_raptor": 7.509478023,
+    "defensive_raptor": 0.277037952,
+    "total_raptor": 7.786515975
+  },
+  {
+    "player_name": "Joel Embiid",
+    "offensive_raptor": 2.686678599,
+    "defensive_raptor": 4.84082089,
+    "total_raptor": 7.527499489
+  },
+  {
+    "player_name": "Anthony Davis",
+    "offensive_raptor": 4.105122105,
+    "defensive_raptor": 3.275084908,
+    "total_raptor": 7.380207013
+  },
+  {
+    "player_name": "Jusuf Nurkic",
+    "offensive_raptor": 2.061289263,
+    "defensive_raptor": 5.178597165,
+    "total_raptor": 7.239886428
+  },
+  {
+    "player_name": "Giannis Antetokounmpo",
+    "offensive_raptor": 3.881445468,
+    "defensive_raptor": 2.925072159,
+    "total_raptor": 6.806517627
+  },
+  {
+    "player_name": "Kawhi Leonard",
+    "offensive_raptor": 5.729369444,
+    "defensive_raptor": 0.899991488,
+    "total_raptor": 6.629360932
+  },
+  {
+    "player_name": "Mike Conley",
+    "offensive_raptor": 4.605585265,
+    "defensive_raptor": 1.701336626,
+    "total_raptor": 6.30692189
+  },
+  {
+    "player_name": "Kemba Walker",
+    "offensive_raptor": 4.957099729,
+    "defensive_raptor": 0.761125568,
+    "total_raptor": 5.718225297
+  },
+  {
+    "player_name": "Kyrie Irving",
+    "offensive_raptor": 5.082983939,
+    "defensive_raptor": 0.608599271,
+    "total_raptor": 5.69158321
+  },
+  {
+    "player_name": "Jimmy Butler",
+    "offensive_raptor": 3.642051091,
+    "defensive_raptor": 1.970907089,
+    "total_raptor": 5.61295818
+  },
+  {
+    "player_name": "Kyle Lowry",
+    "offensive_raptor": 3.668073526,
+    "defensive_raptor": 1.935975743,
+    "total_raptor": 5.60404927
+  },
+  {
+    "player_name": "Damian Lillard",
+    "offensive_raptor": 6.364833398,
+    "defensive_raptor": -0.762903153,
+    "total_raptor": 5.601930245
+  },
+  {
+    "player_name": "LeBron James",
+    "offensive_raptor": 5.413270187,
+    "defensive_raptor": 0.164745304,
+    "total_raptor": 5.57801549
+  },
+  {
+    "player_name": "Jrue Holiday",
+    "offensive_raptor": 4.097605845,
+    "defensive_raptor": 1.472658993,
+    "total_raptor": 5.570264838
+  },
+  {
+    "player_name": "Rudy Gobert",
+    "offensive_raptor": 0.685698238,
+    "defensive_raptor": 4.746979218,
+    "total_raptor": 5.432677456
+  },
+  {
+    "player_name": "Eric Bledsoe",
+    "offensive_raptor": 2.939216053,
+    "defensive_raptor": 2.384481652,
+    "total_raptor": 5.323697705
+  },
+  {
+    "player_name": "Alex Caruso",
+    "offensive_raptor": 1.649426969,
+    "defensive_raptor": 3.495626827,
+    "total_raptor": 5.145053797
+  },
+  {
+    "player_name": "Kevin Durant",
+    "offensive_raptor": 5.22035192,
+    "defensive_raptor": -0.156450057,
+    "total_raptor": 5.063901863
+  },
+  {
+    "player_name": "Nikola Vucevic",
+    "offensive_raptor": 1.406062175,
+    "defensive_raptor": 3.395626636,
+    "total_raptor": 4.80168881
+  },
+  {
+    "player_name": "Jemerrio Jones",
+    "offensive_raptor": -0.702849696,
+    "defensive_raptor": 5.360416217,
+    "total_raptor": 4.657566521
+  },
+  {
+    "player_name": "Chris Paul",
+    "offensive_raptor": 3.224870252,
+    "defensive_raptor": 1.401150982,
+    "total_raptor": 4.626021234
+  },
+  {
+    "player_name": "Blake Griffin",
+    "offensive_raptor": 4.146280337,
+    "defensive_raptor": 0.365133246,
+    "total_raptor": 4.511413584
+  },
+  {
+    "player_name": "Draymond Green",
+    "offensive_raptor": 0.639466015,
+    "defensive_raptor": 3.794677076,
+    "total_raptor": 4.43414309
+  },
+  {
+    "player_name": "Danilo Gallinari",
+    "offensive_raptor": 4.305740859,
+    "defensive_raptor": 0.06919504,
+    "total_raptor": 4.374935899
+  },
+  {
+    "player_name": "Danny Green",
+    "offensive_raptor": 2.627043064,
+    "defensive_raptor": 1.433607989,
+    "total_raptor": 4.060651053
+  },
+  {
+    "player_name": "Paul Millsap",
+    "offensive_raptor": 1.111536334,
+    "defensive_raptor": 2.755770944,
+    "total_raptor": 3.867307278
+  },
+  {
+    "player_name": "Derrick Favors",
+    "offensive_raptor": 0.042324338,
+    "defensive_raptor": 3.822359754,
+    "total_raptor": 3.864684092
+  },
+  {
+    "player_name": "Al Horford",
+    "offensive_raptor": 1.572569563,
+    "defensive_raptor": 2.193769533,
+    "total_raptor": 3.766339096
+  },
+  {
+    "player_name": "Malcolm Brogdon",
+    "offensive_raptor": 2.619533592,
+    "defensive_raptor": 1.137777918,
+    "total_raptor": 3.75731151
+  },
+  {
+    "player_name": "Victor Oladipo",
+    "offensive_raptor": 1.281614756,
+    "defensive_raptor": 2.471570875,
+    "total_raptor": 3.75318563
+  },
+  {
+    "player_name": "Derrick White",
+    "offensive_raptor": 0.74074866,
+    "defensive_raptor": 2.990218314,
+    "total_raptor": 3.730966975
+  },
+  {
+    "player_name": "DeMarcus Cousins",
+    "offensive_raptor": -1.051110372,
+    "defensive_raptor": 4.718601046,
+    "total_raptor": 3.667490674
+  },
+  {
+    "player_name": "Khem Birch",
+    "offensive_raptor": -0.232227797,
+    "defensive_raptor": 3.79999575,
+    "total_raptor": 3.567767953
+  },
+  {
+    "player_name": "Andre Drummond",
+    "offensive_raptor": 0.702011363,
+    "defensive_raptor": 2.822136104,
+    "total_raptor": 3.524147467
+  },
+  {
+    "player_name": "Karl-Anthony Towns",
+    "offensive_raptor": 3.450809575,
+    "defensive_raptor": 0.039750782,
+    "total_raptor": 3.490560356
+  },
+  {
+    "player_name": "Kevin Love",
+    "offensive_raptor": 1.856373505,
+    "defensive_raptor": 1.521788277,
+    "total_raptor": 3.378161783
+  },
+  {
+    "player_name": "Kevon Looney",
+    "offensive_raptor": 0.624270743,
+    "defensive_raptor": 2.753754069,
+    "total_raptor": 3.378024813
+  },
+  {
+    "player_name": "Bradley Beal",
+    "offensive_raptor": 4.314753213,
+    "defensive_raptor": -0.940657602,
+    "total_raptor": 3.374095611
+  },
+  {
+    "player_name": "Davis Bertans",
+    "offensive_raptor": 2.189397005,
+    "defensive_raptor": 1.115183713,
+    "total_raptor": 3.304580718
+  },
+  {
+    "player_name": "CJ McCollum",
+    "offensive_raptor": 3.323624087,
+    "defensive_raptor": -0.148200886,
+    "total_raptor": 3.175423201
+  },
+  {
+    "player_name": "Ersan Ilyasova",
+    "offensive_raptor": -0.066990534,
+    "defensive_raptor": 3.18828477,
+    "total_raptor": 3.121294236
+  },
+  {
+    "player_name": "Hassan Whiteside",
+    "offensive_raptor": -0.644527463,
+    "defensive_raptor": 3.754815658,
+    "total_raptor": 3.110288196
+  },
+  {
+    "player_name": "Luol Deng",
+    "offensive_raptor": 2.191795832,
+    "defensive_raptor": 0.881437377,
+    "total_raptor": 3.073233209
+  },
+  {
+    "player_name": "Marc Gasol",
+    "offensive_raptor": -0.801287871,
+    "defensive_raptor": 3.624534536,
+    "total_raptor": 2.823246665
+  },
+  {
+    "player_name": "Robert Covington",
+    "offensive_raptor": -0.588962675,
+    "defensive_raptor": 3.344973606,
+    "total_raptor": 2.756010931
+  },
+  {
+    "player_name": "John Collins",
+    "offensive_raptor": 3.248466497,
+    "defensive_raptor": -0.516129074,
+    "total_raptor": 2.732337422
+  },
+  {
+    "player_name": "Clint Capela",
+    "offensive_raptor": 0.793208864,
+    "defensive_raptor": 1.9299462,
+    "total_raptor": 2.723155064
+  },
+  {
+    "player_name": "Jeremy Lamb",
+    "offensive_raptor": 1.532139373,
+    "defensive_raptor": 1.14690751,
+    "total_raptor": 2.679046882
+  },
+  {
+    "player_name": "Khris Middleton",
+    "offensive_raptor": 2.218126014,
+    "defensive_raptor": 0.400046619,
+    "total_raptor": 2.618172633
+  },
+  {
+    "player_name": "Otto Porter Jr.",
+    "offensive_raptor": 1.2760914,
+    "defensive_raptor": 1.288121357,
+    "total_raptor": 2.564212757
+  },
+  {
+    "player_name": "Pascal Siakam",
+    "offensive_raptor": 1.305769171,
+    "defensive_raptor": 1.249779966,
+    "total_raptor": 2.555549138
+  },
+  {
+    "player_name": "Thaddeus Young",
+    "offensive_raptor": 0.66618317,
+    "defensive_raptor": 1.887133042,
+    "total_raptor": 2.553316212
+  },
+  {
+    "player_name": "Boban Marjanovic",
+    "offensive_raptor": 0.947418168,
+    "defensive_raptor": 1.605192626,
+    "total_raptor": 2.552610794
+  },
+  {
+    "player_name": "Patrick Beverley",
+    "offensive_raptor": 1.154291376,
+    "defensive_raptor": 1.370290029,
+    "total_raptor": 2.524581404
+  },
+  {
+    "player_name": "TJ Leaf",
+    "offensive_raptor": 0.013488072,
+    "defensive_raptor": 2.478827511,
+    "total_raptor": 2.492315583
+  },
+  {
+    "player_name": "Delon Wright",
+    "offensive_raptor": 0.482275973,
+    "defensive_raptor": 2.004638512,
+    "total_raptor": 2.486914485
+  },
+  {
+    "player_name": "Caris LeVert",
+    "offensive_raptor": 0.982270565,
+    "defensive_raptor": 1.497373344,
+    "total_raptor": 2.479643909
+  },
+  {
+    "player_name": "Shabazz Napier",
+    "offensive_raptor": 1.748878839,
+    "defensive_raptor": 0.681737837,
+    "total_raptor": 2.430616677
+  },
+  {
+    "player_name": "Joe Ingles",
+    "offensive_raptor": 1.224300561,
+    "defensive_raptor": 1.195728857,
+    "total_raptor": 2.420029419
+  },
+  {
+    "player_name": "Marcus Smart",
+    "offensive_raptor": 0.094095312,
+    "defensive_raptor": 2.26768339,
+    "total_raptor": 2.361778703
+  },
+  {
+    "player_name": "Larry Nance Jr.",
+    "offensive_raptor": 0.00191379,
+    "defensive_raptor": 2.230547709,
+    "total_raptor": 2.232461499
+  },
+  {
+    "player_name": "Luka Doncic",
+    "offensive_raptor": 3.095993803,
+    "defensive_raptor": -0.86982288,
+    "total_raptor": 2.226170923
+  },
+  {
+    "player_name": "Nemanja Bjelica",
+    "offensive_raptor": 1.248790681,
+    "defensive_raptor": 0.965789827,
+    "total_raptor": 2.214580508
+  },
+  {
+    "player_name": "Rudy Gay",
+    "offensive_raptor": 1.0092075,
+    "defensive_raptor": 1.195299685,
+    "total_raptor": 2.204507185
+  },
+  {
+    "player_name": "Jakob Poeltl",
+    "offensive_raptor": 1.275489588,
+    "defensive_raptor": 0.801859174,
+    "total_raptor": 2.077348762
+  },
+  {
+    "player_name": "LaMarcus Aldridge",
+    "offensive_raptor": 0.648585995,
+    "defensive_raptor": 1.414263641,
+    "total_raptor": 2.062849637
+  },
+  {
+    "player_name": "Raul Neto",
+    "offensive_raptor": 2.168821359,
+    "defensive_raptor": -0.138402344,
+    "total_raptor": 2.030419014
+  },
+  {
+    "player_name": "Jared Dudley",
+    "offensive_raptor": -0.584992689,
+    "defensive_raptor": 2.605369031,
+    "total_raptor": 2.020376342
+  },
+  {
+    "player_name": "Thabo Sefolosha",
+    "offensive_raptor": -1.955501881,
+    "defensive_raptor": 3.965153368,
+    "total_raptor": 2.009651487
+  },
+  {
+    "player_name": "Omri Casspi",
+    "offensive_raptor": -0.390923717,
+    "defensive_raptor": 2.37274264,
+    "total_raptor": 1.981818923
+  },
+  {
+    "player_name": "Luke Kornet",
+    "offensive_raptor": -1.698465238,
+    "defensive_raptor": 3.6311398,
+    "total_raptor": 1.932674563
+  },
+  {
+    "player_name": "George Hill",
+    "offensive_raptor": 0.810334751,
+    "defensive_raptor": 1.083541361,
+    "total_raptor": 1.893876112
+  },
+  {
+    "player_name": "Trey Burke",
+    "offensive_raptor": 2.03395714,
+    "defensive_raptor": -0.140762796,
+    "total_raptor": 1.893194344
+  },
+  {
+    "player_name": "Monte Morris",
+    "offensive_raptor": 1.01626306,
+    "defensive_raptor": 0.862862804,
+    "total_raptor": 1.879125864
+  },
+  {
+    "player_name": "Dwight Powell",
+    "offensive_raptor": 2.233488387,
+    "defensive_raptor": -0.370409315,
+    "total_raptor": 1.863079072
+  },
+  {
+    "player_name": "Maxi Kleber",
+    "offensive_raptor": -1.055587277,
+    "defensive_raptor": 2.863225479,
+    "total_raptor": 1.807638202
+  },
+  {
+    "player_name": "Steven Adams",
+    "offensive_raptor": -0.071750204,
+    "defensive_raptor": 1.875017591,
+    "total_raptor": 1.803267387
+  },
+  {
+    "player_name": "Josh Richardson",
+    "offensive_raptor": 0.923699263,
+    "defensive_raptor": 0.86957815,
+    "total_raptor": 1.793277413
+  },
+  {
+    "player_name": "Donte DiVincenzo",
+    "offensive_raptor": -1.506700249,
+    "defensive_raptor": 3.297772532,
+    "total_raptor": 1.791072283
+  },
+  {
+    "player_name": "Nikola Mirotic",
+    "offensive_raptor": 1.077714014,
+    "defensive_raptor": 0.702490193,
+    "total_raptor": 1.780204207
+  },
+  {
+    "player_name": "Aron Baynes",
+    "offensive_raptor": -1.770118169,
+    "defensive_raptor": 3.516294504,
+    "total_raptor": 1.746176335
+  },
+  {
+    "player_name": "Derrick Jones Jr.",
+    "offensive_raptor": -0.414004125,
+    "defensive_raptor": 2.158835988,
+    "total_raptor": 1.744831863
+  },
+  {
+    "player_name": "De'Aaron Fox",
+    "offensive_raptor": 1.850909879,
+    "defensive_raptor": -0.111283064,
+    "total_raptor": 1.739626815
+  },
+  {
+    "player_name": "Nene",
+    "offensive_raptor": -1.243735281,
+    "defensive_raptor": 2.973202954,
+    "total_raptor": 1.729467673
+  },
+  {
+    "player_name": "Jamal Murray",
+    "offensive_raptor": 2.058267597,
+    "defensive_raptor": -0.354139813,
+    "total_raptor": 1.704127784
+  },
+  {
+    "player_name": "Montrezl Harrell",
+    "offensive_raptor": 0.924012012,
+    "defensive_raptor": 0.77559398,
+    "total_raptor": 1.699605992
+  },
+  {
+    "player_name": "Jonas Valanciunas",
+    "offensive_raptor": 0.630269991,
+    "defensive_raptor": 0.984466293,
+    "total_raptor": 1.614736285
+  },
+  {
+    "player_name": "Corey Brewer",
+    "offensive_raptor": -1.242193408,
+    "defensive_raptor": 2.851776069,
+    "total_raptor": 1.609582661
+  },
+  {
+    "player_name": "Aaron Holiday",
+    "offensive_raptor": -0.611642837,
+    "defensive_raptor": 2.205735757,
+    "total_raptor": 1.59409292
+  },
+  {
+    "player_name": "David Nwaba",
+    "offensive_raptor": 0.34176667,
+    "defensive_raptor": 1.202009963,
+    "total_raptor": 1.543776633
+  },
+  {
+    "player_name": "Bogdan Bogdanovic",
+    "offensive_raptor": 1.720246548,
+    "defensive_raptor": -0.184039197,
+    "total_raptor": 1.536207351
+  },
+  {
+    "player_name": "Derrick Rose",
+    "offensive_raptor": 2.738555422,
+    "defensive_raptor": -1.233260732,
+    "total_raptor": 1.50529469
+  },
+  {
+    "player_name": "D'Angelo Russell",
+    "offensive_raptor": 2.391975114,
+    "defensive_raptor": -0.908027662,
+    "total_raptor": 1.483947452
+  },
+  {
+    "player_name": "Andre Iguodala",
+    "offensive_raptor": 0.168922619,
+    "defensive_raptor": 1.304237336,
+    "total_raptor": 1.473159955
+  },
+  {
+    "player_name": "Domantas Sabonis",
+    "offensive_raptor": 0.931713864,
+    "defensive_raptor": 0.53042767,
+    "total_raptor": 1.462141534
+  },
+  {
+    "player_name": "Russell Westbrook",
+    "offensive_raptor": 2.541995497,
+    "defensive_raptor": -1.110208199,
+    "total_raptor": 1.431787298
+  },
+  {
+    "player_name": "Michael Carter-Williams",
+    "offensive_raptor": -0.552406875,
+    "defensive_raptor": 1.968074784,
+    "total_raptor": 1.415667909
+  },
+  {
+    "player_name": "Cory Joseph",
+    "offensive_raptor": -0.902044956,
+    "defensive_raptor": 2.314084176,
+    "total_raptor": 1.41203922
+  },
+  {
+    "player_name": "Ricky Rubio",
+    "offensive_raptor": 0.424229725,
+    "defensive_raptor": 0.942731901,
+    "total_raptor": 1.366961626
+  },
+  {
+    "player_name": "Buddy Hield",
+    "offensive_raptor": 2.172343789,
+    "defensive_raptor": -0.811709018,
+    "total_raptor": 1.360634771
+  },
+  {
+    "player_name": "John Henson",
+    "offensive_raptor": -2.09395997,
+    "defensive_raptor": 3.414033857,
+    "total_raptor": 1.320073887
+  },
+  {
+    "player_name": "J.J. Barea",
+    "offensive_raptor": 1.889043623,
+    "defensive_raptor": -0.675701744,
+    "total_raptor": 1.213341879
+  },
+  {
+    "player_name": "Maurice Harkless",
+    "offensive_raptor": -0.11598181,
+    "defensive_raptor": 1.304296564,
+    "total_raptor": 1.188314754
+  },
+  {
+    "player_name": "Brook Lopez",
+    "offensive_raptor": -0.514036892,
+    "defensive_raptor": 1.638571466,
+    "total_raptor": 1.124534574
+  },
+  {
+    "player_name": "Spencer Dinwiddie",
+    "offensive_raptor": 1.877261159,
+    "defensive_raptor": -0.762442134,
+    "total_raptor": 1.114819025
+  },
+  {
+    "player_name": "JJ Redick",
+    "offensive_raptor": 1.732418761,
+    "defensive_raptor": -0.632733121,
+    "total_raptor": 1.09968564
+  },
+  {
+    "player_name": "Lou Williams",
+    "offensive_raptor": 5.009875396,
+    "defensive_raptor": -3.945944147,
+    "total_raptor": 1.063931249
+  },
+  {
+    "player_name": "Furkan Korkmaz",
+    "offensive_raptor": -0.051372541,
+    "defensive_raptor": 1.106053259,
+    "total_raptor": 1.054680718
+  },
+  {
+    "player_name": "Kadeem Allen",
+    "offensive_raptor": 2.07813831,
+    "defensive_raptor": -1.023795247,
+    "total_raptor": 1.054343063
+  },
+  {
+    "player_name": "Cody Zeller",
+    "offensive_raptor": 0.464301593,
+    "defensive_raptor": 0.551003528,
+    "total_raptor": 1.015305121
+  },
+  {
+    "player_name": "Jayson Tatum",
+    "offensive_raptor": 0.376533514,
+    "defensive_raptor": 0.583981114,
+    "total_raptor": 0.960514628
+  },
+  {
+    "player_name": "Al-Farouq Aminu",
+    "offensive_raptor": 0.29984583,
+    "defensive_raptor": 0.636137897,
+    "total_raptor": 0.935983728
+  },
+  {
+    "player_name": "Michael Kidd-Gilchrist",
+    "offensive_raptor": -1.127664722,
+    "defensive_raptor": 2.02480103,
+    "total_raptor": 0.897136308
+  },
+  {
+    "player_name": "Jerami Grant",
+    "offensive_raptor": -0.286538944,
+    "defensive_raptor": 1.178368894,
+    "total_raptor": 0.891829951
+  },
+  {
+    "player_name": "Josh Hart",
+    "offensive_raptor": -2.145951474,
+    "defensive_raptor": 3.024394674,
+    "total_raptor": 0.878443199
+  },
+  {
+    "player_name": "Bam Adebayo",
+    "offensive_raptor": -1.875309771,
+    "defensive_raptor": 2.676011508,
+    "total_raptor": 0.800701737
+  },
+  {
+    "player_name": "PJ Tucker",
+    "offensive_raptor": -1.214969928,
+    "defensive_raptor": 2.007087921,
+    "total_raptor": 0.792117992
+  },
+  {
+    "player_name": "Darren Collison",
+    "offensive_raptor": 0.658529968,
+    "defensive_raptor": 0.113142955,
+    "total_raptor": 0.771672923
+  },
+  {
+    "player_name": "Yogi Ferrell",
+    "offensive_raptor": 0.819232549,
+    "defensive_raptor": -0.055286934,
+    "total_raptor": 0.763945615
+  },
+  {
+    "player_name": "Kelly Olynyk",
+    "offensive_raptor": 0.051287881,
+    "defensive_raptor": 0.699614299,
+    "total_raptor": 0.75090218
+  },
+  {
+    "player_name": "Ed Davis",
+    "offensive_raptor": -0.747163493,
+    "defensive_raptor": 1.469129107,
+    "total_raptor": 0.721965614
+  },
+  {
+    "player_name": "Tristan Thompson",
+    "offensive_raptor": -0.246354593,
+    "defensive_raptor": 0.957837959,
+    "total_raptor": 0.711483366
+  },
+  {
+    "player_name": "Terrence Ross",
+    "offensive_raptor": 0.993681612,
+    "defensive_raptor": -0.329349363,
+    "total_raptor": 0.664332249
+  },
+  {
+    "player_name": "Donovan Mitchell",
+    "offensive_raptor": 1.714183889,
+    "defensive_raptor": -1.072365224,
+    "total_raptor": 0.641818665
+  },
+  {
+    "player_name": "Devin Booker",
+    "offensive_raptor": 3.582046596,
+    "defensive_raptor": -2.997282622,
+    "total_raptor": 0.584763974
+  },
+  {
+    "player_name": "Jonathan Isaac",
+    "offensive_raptor": -0.95646016,
+    "defensive_raptor": 1.473671158,
+    "total_raptor": 0.517210998
+  },
+  {
+    "player_name": "Tim Hardaway Jr.",
+    "offensive_raptor": 1.209299345,
+    "defensive_raptor": -0.696628285,
+    "total_raptor": 0.51267106
+  },
+  {
+    "player_name": "Kentavious Caldwell-Pope",
+    "offensive_raptor": 0.808161021,
+    "defensive_raptor": -0.297614038,
+    "total_raptor": 0.510546983
+  },
+  {
+    "player_name": "Gordon Hayward",
+    "offensive_raptor": 0.480179643,
+    "defensive_raptor": 0.029085809,
+    "total_raptor": 0.509265452
+  },
+  {
+    "player_name": "Jae Crowder",
+    "offensive_raptor": -0.14993839,
+    "defensive_raptor": 0.611935727,
+    "total_raptor": 0.461997337
+  },
+  {
+    "player_name": "Landry Shamet",
+    "offensive_raptor": 0.970192147,
+    "defensive_raptor": -0.522171789,
+    "total_raptor": 0.448020358
+  },
+  {
+    "player_name": "Kenneth Faried",
+    "offensive_raptor": 0.390434584,
+    "defensive_raptor": 0.007846967,
+    "total_raptor": 0.398281552
+  },
+  {
+    "player_name": "Rondae Hollis-Jefferson",
+    "offensive_raptor": -2.40154279,
+    "defensive_raptor": 2.784681392,
+    "total_raptor": 0.383138602
+  },
+  {
+    "player_name": "Nerlens Noel",
+    "offensive_raptor": -2.752245645,
+    "defensive_raptor": 3.132992205,
+    "total_raptor": 0.38074656
+  },
+  {
+    "player_name": "Aaron Gordon",
+    "offensive_raptor": 0.054661144,
+    "defensive_raptor": 0.322631076,
+    "total_raptor": 0.37729222
+  },
+  {
+    "player_name": "Zhaire Smith",
+    "offensive_raptor": 0.950911274,
+    "defensive_raptor": -0.58117895,
+    "total_raptor": 0.369732324
+  },
+  {
+    "player_name": "Fred VanVleet",
+    "offensive_raptor": 0.949684211,
+    "defensive_raptor": -0.601172387,
+    "total_raptor": 0.348511825
+  },
+  {
+    "player_name": "Shaquille Harrison",
+    "offensive_raptor": -1.441647529,
+    "defensive_raptor": 1.779813919,
+    "total_raptor": 0.338166389
+  },
+  {
+    "player_name": "Tyus Jones",
+    "offensive_raptor": 0.225509625,
+    "defensive_raptor": 0.109368068,
+    "total_raptor": 0.334877693
+  },
+  {
+    "player_name": "Royce O'Neale",
+    "offensive_raptor": -2.189349137,
+    "defensive_raptor": 2.516185657,
+    "total_raptor": 0.32683652
+  },
+  {
+    "player_name": "Josh Okogie",
+    "offensive_raptor": -1.339574423,
+    "defensive_raptor": 1.655707594,
+    "total_raptor": 0.316133171
+  },
+  {
+    "player_name": "Tobias Harris",
+    "offensive_raptor": 0.916783731,
+    "defensive_raptor": -0.619941266,
+    "total_raptor": 0.296842465
+  },
+  {
+    "player_name": "Pat Connaughton",
+    "offensive_raptor": -0.23705713,
+    "defensive_raptor": 0.53001171,
+    "total_raptor": 0.29295458
+  },
+  {
+    "player_name": "Dewayne Dedmon",
+    "offensive_raptor": -0.891659562,
+    "defensive_raptor": 1.146982037,
+    "total_raptor": 0.255322475
+  },
+  {
+    "player_name": "Jordan McRae",
+    "offensive_raptor": 0.874999906,
+    "defensive_raptor": -0.638691746,
+    "total_raptor": 0.23630816
+  },
+  {
+    "player_name": "Mitchell Robinson",
+    "offensive_raptor": -0.654512742,
+    "defensive_raptor": 0.884326008,
+    "total_raptor": 0.229813267
+  },
+  {
+    "player_name": "Kyle Anderson",
+    "offensive_raptor": -2.037901415,
+    "defensive_raptor": 2.221698331,
+    "total_raptor": 0.183796917
+  },
+  {
+    "player_name": "Seth Curry",
+    "offensive_raptor": -0.375472556,
+    "defensive_raptor": 0.558132132,
+    "total_raptor": 0.182659576
+  },
+  {
+    "player_name": "Lauri Markkanen",
+    "offensive_raptor": 0.957193313,
+    "defensive_raptor": -0.777950749,
+    "total_raptor": 0.179242564
+  },
+  {
+    "player_name": "DeMar DeRozan",
+    "offensive_raptor": 1.263006458,
+    "defensive_raptor": -1.084380094,
+    "total_raptor": 0.178626364
+  },
+  {
+    "player_name": "Mikal Bridges",
+    "offensive_raptor": -0.949780437,
+    "defensive_raptor": 1.126706032,
+    "total_raptor": 0.176925595
+  },
+  {
+    "player_name": "JaKarr Sampson",
+    "offensive_raptor": 0.966788592,
+    "defensive_raptor": -0.797689308,
+    "total_raptor": 0.169099284
+  },
+  {
+    "player_name": "Ian Mahinmi",
+    "offensive_raptor": -3.072572211,
+    "defensive_raptor": 3.238064544,
+    "total_raptor": 0.165492334
+  },
+  {
+    "player_name": "Patty Mills",
+    "offensive_raptor": 1.090023599,
+    "defensive_raptor": -0.92804627,
+    "total_raptor": 0.161977329
+  },
+  {
+    "player_name": "Gary Harris",
+    "offensive_raptor": -0.416571518,
+    "defensive_raptor": 0.523651895,
+    "total_raptor": 0.107080377
+  },
+  {
+    "player_name": "Myles Turner",
+    "offensive_raptor": -1.932312894,
+    "defensive_raptor": 2.028040362,
+    "total_raptor": 0.095727468
+  },
+  {
+    "player_name": "Jaren Jackson Jr.",
+    "offensive_raptor": -1.706874443,
+    "defensive_raptor": 1.801412033,
+    "total_raptor": 0.094537589
+  },
+  {
+    "player_name": "Goran Dragic",
+    "offensive_raptor": 1.205345062,
+    "defensive_raptor": -1.122524222,
+    "total_raptor": 0.08282084
+  },
+  {
+    "player_name": "Frank Kaminsky",
+    "offensive_raptor": -0.339343815,
+    "defensive_raptor": 0.38933867,
+    "total_raptor": 0.049994855
+  },
+  {
+    "player_name": "Noah Vonleh",
+    "offensive_raptor": -0.864986775,
+    "defensive_raptor": 0.888348777,
+    "total_raptor": 0.023362002
+  },
+  {
+    "player_name": "Serge Ibaka",
+    "offensive_raptor": -1.215856993,
+    "defensive_raptor": 1.234273645,
+    "total_raptor": 0.018416652
+  },
+  {
+    "player_name": "Bojan Bogdanovic",
+    "offensive_raptor": 0.648770127,
+    "defensive_raptor": -0.640111537,
+    "total_raptor": 0.008658591
+  },
+  {
+    "player_name": "Enes Kanter",
+    "offensive_raptor": 0.715626463,
+    "defensive_raptor": -0.707603204,
+    "total_raptor": 0.008023259
+  },
+  {
+    "player_name": "Ryan Broekhoff",
+    "offensive_raptor": 0.285768815,
+    "defensive_raptor": -0.287944445,
+    "total_raptor": -0.00217563
+  },
+  {
+    "player_name": "Joe Harris",
+    "offensive_raptor": 0.67403071,
+    "defensive_raptor": -0.68135903,
+    "total_raptor": -0.00732832
+  },
+  {
+    "player_name": "Jeff Teague",
+    "offensive_raptor": 1.017626106,
+    "defensive_raptor": -1.045191223,
+    "total_raptor": -0.027565117
+  },
+  {
+    "player_name": "Jordan Clarkson",
+    "offensive_raptor": 2.035009123,
+    "defensive_raptor": -2.077627873,
+    "total_raptor": -0.042618749
+  },
+  {
+    "player_name": "Ben Simmons",
+    "offensive_raptor": 0.80831011,
+    "defensive_raptor": -0.877988062,
+    "total_raptor": -0.069677953
+  },
+  {
+    "player_name": "Treveon Graham",
+    "offensive_raptor": -1.834682236,
+    "defensive_raptor": 1.760981312,
+    "total_raptor": -0.073700924
+  },
+  {
+    "player_name": "Justise Winslow",
+    "offensive_raptor": -0.379681991,
+    "defensive_raptor": 0.293169099,
+    "total_raptor": -0.086512891
+  },
+  {
+    "player_name": "Torrey Craig",
+    "offensive_raptor": -0.176797937,
+    "defensive_raptor": 0.086586894,
+    "total_raptor": -0.090211044
+  },
+  {
+    "player_name": "Kelly Oubre Jr.",
+    "offensive_raptor": -0.563684933,
+    "defensive_raptor": 0.455728374,
+    "total_raptor": -0.10795656
+  },
+  {
+    "player_name": "Danuel House Jr.",
+    "offensive_raptor": 0.555661147,
+    "defensive_raptor": -0.669027287,
+    "total_raptor": -0.11336614
+  },
+  {
+    "player_name": "D.J. Augustin",
+    "offensive_raptor": 2.258336599,
+    "defensive_raptor": -2.376711108,
+    "total_raptor": -0.118374508
+  },
+  {
+    "player_name": "Raymond Felton",
+    "offensive_raptor": -2.39365284,
+    "defensive_raptor": 2.230969762,
+    "total_raptor": -0.162683078
+  },
+  {
+    "player_name": "Rodney Hood",
+    "offensive_raptor": 0.354130569,
+    "defensive_raptor": -0.532681375,
+    "total_raptor": -0.178550806
+  },
+  {
+    "player_name": "Klay Thompson",
+    "offensive_raptor": 0.739507165,
+    "defensive_raptor": -0.92770635,
+    "total_raptor": -0.188199186
+  },
+  {
+    "player_name": "Evan Fournier",
+    "offensive_raptor": 0.390855114,
+    "defensive_raptor": -0.586519922,
+    "total_raptor": -0.195664808
+  },
+  {
+    "player_name": "Tyreke Evans",
+    "offensive_raptor": -0.581373031,
+    "defensive_raptor": 0.364619341,
+    "total_raptor": -0.21675369
+  },
+  {
+    "player_name": "Tomas Satoransky",
+    "offensive_raptor": 0.319644852,
+    "defensive_raptor": -0.550261995,
+    "total_raptor": -0.230617143
+  },
+  {
+    "player_name": "Brad Wanamaker",
+    "offensive_raptor": -0.616224785,
+    "defensive_raptor": 0.377185441,
+    "total_raptor": -0.239039344
+  },
+  {
+    "player_name": "Joakim Noah",
+    "offensive_raptor": -1.815527272,
+    "defensive_raptor": 1.550838152,
+    "total_raptor": -0.26468912
+  },
+  {
+    "player_name": "T.J. Warren",
+    "offensive_raptor": 0.894260757,
+    "defensive_raptor": -1.211225502,
+    "total_raptor": -0.316964744
+  },
+  {
+    "player_name": "Lonzo Ball",
+    "offensive_raptor": -1.111960375,
+    "defensive_raptor": 0.787086292,
+    "total_raptor": -0.324874083
+  },
+  {
+    "player_name": "Bruce Brown",
+    "offensive_raptor": -2.748478088,
+    "defensive_raptor": 2.413942687,
+    "total_raptor": -0.334535402
+  },
+  {
+    "player_name": "Iman Shumpert",
+    "offensive_raptor": -1.306332986,
+    "defensive_raptor": 0.936756298,
+    "total_raptor": -0.369576688
+  },
+  {
+    "player_name": "Dorian Finney-Smith",
+    "offensive_raptor": -2.077004922,
+    "defensive_raptor": 1.678175374,
+    "total_raptor": -0.398829548
+  },
+  {
+    "player_name": "Theo Pinson",
+    "offensive_raptor": -2.678457915,
+    "defensive_raptor": 2.234528933,
+    "total_raptor": -0.443928981
+  },
+  {
+    "player_name": "Ryan Arcidiacono",
+    "offensive_raptor": -0.091055502,
+    "defensive_raptor": -0.40309072,
+    "total_raptor": -0.494146222
+  },
+  {
+    "player_name": "Ivica Zubac",
+    "offensive_raptor": -2.362444421,
+    "defensive_raptor": 1.813768007,
+    "total_raptor": -0.548676414
+  },
+  {
+    "player_name": "Kenrich Williams",
+    "offensive_raptor": -1.267268136,
+    "defensive_raptor": 0.717969568,
+    "total_raptor": -0.549298568
+  },
+  {
+    "player_name": "Matthew Dellavedova",
+    "offensive_raptor": 0.116099336,
+    "defensive_raptor": -0.685849002,
+    "total_raptor": -0.569749666
+  },
+  {
+    "player_name": "Jalen Brunson",
+    "offensive_raptor": 0.039293722,
+    "defensive_raptor": -0.616702887,
+    "total_raptor": -0.577409165
+  },
+  {
+    "player_name": "Willie Cauley-Stein",
+    "offensive_raptor": -2.106705468,
+    "defensive_raptor": 1.506762826,
+    "total_raptor": -0.599942642
+  },
+  {
+    "player_name": "Quincy Acy",
+    "offensive_raptor": -5.581744442,
+    "defensive_raptor": 4.969011211,
+    "total_raptor": -0.612733231
+  },
+  {
+    "player_name": "Gorgui Dieng",
+    "offensive_raptor": -1.321816934,
+    "defensive_raptor": 0.682027159,
+    "total_raptor": -0.639789775
+  },
+  {
+    "player_name": "Wayne Ellington",
+    "offensive_raptor": -0.233007305,
+    "defensive_raptor": -0.414817782,
+    "total_raptor": -0.647825087
+  },
+  {
+    "player_name": "Juancho Hernangomez",
+    "offensive_raptor": -1.498922953,
+    "defensive_raptor": 0.848656579,
+    "total_raptor": -0.650266374
+  },
+  {
+    "player_name": "Dante Exum",
+    "offensive_raptor": -0.710550123,
+    "defensive_raptor": -0.013893065,
+    "total_raptor": -0.724443188
+  },
+  {
+    "player_name": "Reggie Jackson",
+    "offensive_raptor": 1.662451895,
+    "defensive_raptor": -2.405670708,
+    "total_raptor": -0.743218813
+  },
+  {
+    "player_name": "Jeff Green",
+    "offensive_raptor": 0.157318915,
+    "defensive_raptor": -0.910586592,
+    "total_raptor": -0.753267676
+  },
+  {
+    "player_name": "Malik Beasley",
+    "offensive_raptor": 0.397946685,
+    "defensive_raptor": -1.162639613,
+    "total_raptor": -0.764692928
+  },
+  {
+    "player_name": "Dennis Schroder",
+    "offensive_raptor": -0.205842785,
+    "defensive_raptor": -0.586918595,
+    "total_raptor": -0.79276138
+  },
+  {
+    "player_name": "JaVale McGee",
+    "offensive_raptor": -1.35505616,
+    "defensive_raptor": 0.549611224,
+    "total_raptor": -0.805444935
+  },
+  {
+    "player_name": "Guerschon Yabusele",
+    "offensive_raptor": -3.332666749,
+    "defensive_raptor": 2.503432369,
+    "total_raptor": -0.829234379
+  },
+  {
+    "player_name": "Courtney Lee",
+    "offensive_raptor": -2.479153884,
+    "defensive_raptor": 1.611066582,
+    "total_raptor": -0.868087302
+  },
+  {
+    "player_name": "Justin Holiday",
+    "offensive_raptor": -2.041788543,
+    "defensive_raptor": 1.166454417,
+    "total_raptor": -0.875334126
+  },
+  {
+    "player_name": "Langston Galloway",
+    "offensive_raptor": -0.067679275,
+    "defensive_raptor": -0.824321361,
+    "total_raptor": -0.892000637
+  },
+  {
+    "player_name": "Wesley Matthews",
+    "offensive_raptor": -0.632454894,
+    "defensive_raptor": -0.266367486,
+    "total_raptor": -0.89882238
+  },
+  {
+    "player_name": "Deyonta Davis",
+    "offensive_raptor": -4.039434097,
+    "defensive_raptor": 3.099786981,
+    "total_raptor": -0.939647117
+  },
+  {
+    "player_name": "Jeremy Lin",
+    "offensive_raptor": -1.90746227,
+    "defensive_raptor": 0.967305999,
+    "total_raptor": -0.940156272
+  },
+  {
+    "player_name": "Shai Gilgeous-Alexander",
+    "offensive_raptor": -0.911363472,
+    "defensive_raptor": -0.064278744,
+    "total_raptor": -0.975642216
+  },
+  {
+    "player_name": "Zach LaVine",
+    "offensive_raptor": 1.291777032,
+    "defensive_raptor": -2.316635264,
+    "total_raptor": -1.024858232
+  },
+  {
+    "player_name": "Mike Muscala",
+    "offensive_raptor": -1.19218319,
+    "defensive_raptor": 0.122986475,
+    "total_raptor": -1.069196715
+  },
+  {
+    "player_name": "Elfrid Payton",
+    "offensive_raptor": 0.051765885,
+    "defensive_raptor": -1.128003798,
+    "total_raptor": -1.076237913
+  },
+  {
+    "player_name": "Bruno Caboclo",
+    "offensive_raptor": -0.69958817,
+    "defensive_raptor": -0.378618317,
+    "total_raptor": -1.078206487
+  },
+  {
+    "player_name": "Daniel Theis",
+    "offensive_raptor": -1.271751741,
+    "defensive_raptor": 0.181687606,
+    "total_raptor": -1.090064135
+  },
+  {
+    "player_name": "Marcus Morris",
+    "offensive_raptor": 0.867179786,
+    "defensive_raptor": -1.957837928,
+    "total_raptor": -1.090658142
+  },
+  {
+    "player_name": "Nicolas Batum",
+    "offensive_raptor": -0.878789327,
+    "defensive_raptor": -0.227779817,
+    "total_raptor": -1.106569144
+  },
+  {
+    "player_name": "DeMarre Carroll",
+    "offensive_raptor": -0.581143868,
+    "defensive_raptor": -0.546824277,
+    "total_raptor": -1.127968144
+  },
+  {
+    "player_name": "Taj Gibson",
+    "offensive_raptor": 0.363973256,
+    "defensive_raptor": -1.546470137,
+    "total_raptor": -1.182496881
+  },
+  {
+    "player_name": "Alex Len",
+    "offensive_raptor": -1.771078578,
+    "defensive_raptor": 0.58817557,
+    "total_raptor": -1.182903007
+  },
+  {
+    "player_name": "Andrew Bogut",
+    "offensive_raptor": -2.3545755,
+    "defensive_raptor": 1.171073014,
+    "total_raptor": -1.183502485
+  },
+  {
+    "player_name": "Dion Waiters",
+    "offensive_raptor": -0.309014172,
+    "defensive_raptor": -0.936215215,
+    "total_raptor": -1.245229388
+  },
+  {
+    "player_name": "Norman Powell",
+    "offensive_raptor": -0.672334005,
+    "defensive_raptor": -0.594234642,
+    "total_raptor": -1.266568647
+  },
+  {
+    "player_name": "Kyle Kuzma",
+    "offensive_raptor": -0.566054462,
+    "defensive_raptor": -0.709187771,
+    "total_raptor": -1.275242233
+  },
+  {
+    "player_name": "Harrison Barnes",
+    "offensive_raptor": -0.888714088,
+    "defensive_raptor": -0.395421689,
+    "total_raptor": -1.284135777
+  },
+  {
+    "player_name": "Ish Smith",
+    "offensive_raptor": -0.243526561,
+    "defensive_raptor": -1.064679005,
+    "total_raptor": -1.308205565
+  },
+  {
+    "player_name": "Rodney McGruder",
+    "offensive_raptor": -1.495275736,
+    "defensive_raptor": 0.184018632,
+    "total_raptor": -1.311257103
+  },
+  {
+    "player_name": "Richaun Holmes",
+    "offensive_raptor": -1.491995083,
+    "defensive_raptor": 0.168929539,
+    "total_raptor": -1.323065544
+  },
+  {
+    "player_name": "Isaac Bonga",
+    "offensive_raptor": -7.156291539,
+    "defensive_raptor": 5.828065473,
+    "total_raptor": -1.328226066
+  },
+  {
+    "player_name": "Tyler Johnson",
+    "offensive_raptor": -1.38712974,
+    "defensive_raptor": 0.041461395,
+    "total_raptor": -1.345668345
+  },
+  {
+    "player_name": "Kyle Korver",
+    "offensive_raptor": -0.555819287,
+    "defensive_raptor": -0.794287416,
+    "total_raptor": -1.350106703
+  },
+  {
+    "player_name": "Semi Ojeleye",
+    "offensive_raptor": -2.287685783,
+    "defensive_raptor": 0.925540945,
+    "total_raptor": -1.362144838
+  },
+  {
+    "player_name": "Mason Plumlee",
+    "offensive_raptor": -0.896209414,
+    "defensive_raptor": -0.492825873,
+    "total_raptor": -1.389035287
+  },
+  {
+    "player_name": "D.J. Wilson",
+    "offensive_raptor": -2.340004492,
+    "defensive_raptor": 0.931411607,
+    "total_raptor": -1.408592885
+  },
+  {
+    "player_name": "Daniel Hamilton",
+    "offensive_raptor": -2.172988524,
+    "defensive_raptor": 0.76089805,
+    "total_raptor": -1.412090474
+  },
+  {
+    "player_name": "Julius Randle",
+    "offensive_raptor": 0.599000427,
+    "defensive_raptor": -2.019237211,
+    "total_raptor": -1.420236785
+  },
+  {
+    "player_name": "Vince Carter",
+    "offensive_raptor": -1.173868305,
+    "defensive_raptor": -0.250474789,
+    "total_raptor": -1.424343095
+  },
+  {
+    "player_name": "Darius Miller",
+    "offensive_raptor": -0.931896356,
+    "defensive_raptor": -0.493935462,
+    "total_raptor": -1.425831818
+  },
+  {
+    "player_name": "Eric Gordon",
+    "offensive_raptor": 0.669789517,
+    "defensive_raptor": -2.119071608,
+    "total_raptor": -1.449282091
+  },
+  {
+    "player_name": "Terry Rozier",
+    "offensive_raptor": -1.711652332,
+    "defensive_raptor": 0.253893266,
+    "total_raptor": -1.457759066
+  },
+  {
+    "player_name": "Thomas Bryant",
+    "offensive_raptor": 0.239098544,
+    "defensive_raptor": -1.702779471,
+    "total_raptor": -1.463680927
+  },
+  {
+    "player_name": "Jaylen Brown",
+    "offensive_raptor": -1.702549513,
+    "defensive_raptor": 0.231335142,
+    "total_raptor": -1.471214371
+  },
+  {
+    "player_name": "Tony Snell",
+    "offensive_raptor": -0.181996799,
+    "defensive_raptor": -1.310432046,
+    "total_raptor": -1.492428845
+  },
+  {
+    "player_name": "Shake Milton",
+    "offensive_raptor": -0.19454306,
+    "defensive_raptor": -1.311378115,
+    "total_raptor": -1.505921175
+  },
+  {
+    "player_name": "Evan Turner",
+    "offensive_raptor": -1.803791636,
+    "defensive_raptor": 0.29458445,
+    "total_raptor": -1.509207186
+  },
+  {
+    "player_name": "Devin Harris",
+    "offensive_raptor": -0.071562155,
+    "defensive_raptor": -1.441416908,
+    "total_raptor": -1.512979063
+  },
+  {
+    "player_name": "Dario Saric",
+    "offensive_raptor": -0.551040056,
+    "defensive_raptor": -0.971618063,
+    "total_raptor": -1.522658118
+  },
+  {
+    "player_name": "DeAndre Jordan",
+    "offensive_raptor": -2.23246193,
+    "defensive_raptor": 0.697538738,
+    "total_raptor": -1.534923192
+  },
+  {
+    "player_name": "Garrett Temple",
+    "offensive_raptor": -2.437885162,
+    "defensive_raptor": 0.799188925,
+    "total_raptor": -1.638696237
+  },
+  {
+    "player_name": "Marco Belinelli",
+    "offensive_raptor": 0.529730371,
+    "defensive_raptor": -2.212868079,
+    "total_raptor": -1.683137708
+  },
+  {
+    "player_name": "Jake Layman",
+    "offensive_raptor": -1.237026335,
+    "defensive_raptor": -0.447895407,
+    "total_raptor": -1.684921742
+  },
+  {
+    "player_name": "Justin Jackson",
+    "offensive_raptor": -0.731413297,
+    "defensive_raptor": -0.977391117,
+    "total_raptor": -1.708804414
+  },
+  {
+    "player_name": "T.J. McConnell",
+    "offensive_raptor": -1.030849033,
+    "defensive_raptor": -0.685020766,
+    "total_raptor": -1.715869799
+  },
+  {
+    "player_name": "Kris Dunn",
+    "offensive_raptor": -1.085383421,
+    "defensive_raptor": -0.671562286,
+    "total_raptor": -1.756945707
+  },
+  {
+    "player_name": "Dennis Smith Jr.",
+    "offensive_raptor": -2.933755952,
+    "defensive_raptor": 1.171558246,
+    "total_raptor": -1.762197706
+  },
+  {
+    "player_name": "Kevin Huerter",
+    "offensive_raptor": 0.441214219,
+    "defensive_raptor": -2.205580574,
+    "total_raptor": -1.764366354
+  },
+  {
+    "player_name": "Tyrone Wallace",
+    "offensive_raptor": -2.364182853,
+    "defensive_raptor": 0.579695685,
+    "total_raptor": -1.784487168
+  },
+  {
+    "player_name": "Isaiah Hartenstein",
+    "offensive_raptor": -2.664459756,
+    "defensive_raptor": 0.859142719,
+    "total_raptor": -1.805317037
+  },
+  {
+    "player_name": "Deonte Burton",
+    "offensive_raptor": -5.893851254,
+    "defensive_raptor": 4.078677907,
+    "total_raptor": -1.815173347
+  },
+  {
+    "player_name": "Jerome Robinson",
+    "offensive_raptor": 0.137938296,
+    "defensive_raptor": -1.970082243,
+    "total_raptor": -1.832143948
+  },
+  {
+    "player_name": "Ron Baker",
+    "offensive_raptor": -5.687231528,
+    "defensive_raptor": 3.853925736,
+    "total_raptor": -1.833305792
+  },
+  {
+    "player_name": "Avery Bradley",
+    "offensive_raptor": -2.552819263,
+    "defensive_raptor": 0.684727527,
+    "total_raptor": -1.868091736
+  },
+  {
+    "player_name": "Bryn Forbes",
+    "offensive_raptor": 0.326587932,
+    "defensive_raptor": -2.209899903,
+    "total_raptor": -1.883311971
+  },
+  {
+    "player_name": "Jaron Blossomgame",
+    "offensive_raptor": -2.094429936,
+    "defensive_raptor": 0.203182846,
+    "total_raptor": -1.89124709
+  },
+  {
+    "player_name": "Quincy Pondexter",
+    "offensive_raptor": -2.403831378,
+    "defensive_raptor": 0.483638023,
+    "total_raptor": -1.920193356
+  },
+  {
+    "player_name": "Tyson Chandler",
+    "offensive_raptor": -3.784419206,
+    "defensive_raptor": 1.831790115,
+    "total_raptor": -1.952629091
+  },
+  {
+    "player_name": "Amir Johnson",
+    "offensive_raptor": -1.334572671,
+    "defensive_raptor": -0.620777819,
+    "total_raptor": -1.955350489
+  },
+  {
+    "player_name": "Damian Jones",
+    "offensive_raptor": -2.053988465,
+    "defensive_raptor": 0.086466551,
+    "total_raptor": -1.967521914
+  },
+  {
+    "player_name": "Devonte' Graham",
+    "offensive_raptor": -0.853508666,
+    "defensive_raptor": -1.116983356,
+    "total_raptor": -1.970492022
+  },
+  {
+    "player_name": "Andrew Wiggins",
+    "offensive_raptor": -1.122966346,
+    "defensive_raptor": -0.85350066,
+    "total_raptor": -1.976467006
+  },
+  {
+    "player_name": "Damion Lee",
+    "offensive_raptor": -0.946589613,
+    "defensive_raptor": -1.032479745,
+    "total_raptor": -1.979069358
+  },
+  {
+    "player_name": "Brandon Ingram",
+    "offensive_raptor": -1.318796607,
+    "defensive_raptor": -0.681162932,
+    "total_raptor": -1.999959539
+  },
+  {
+    "player_name": "Marvin Williams",
+    "offensive_raptor": -1.204918905,
+    "defensive_raptor": -0.813566863,
+    "total_raptor": -2.018485768
+  },
+  {
+    "player_name": "Allen Crabbe",
+    "offensive_raptor": -2.589412528,
+    "defensive_raptor": 0.562959069,
+    "total_raptor": -2.026453459
+  },
+  {
+    "player_name": "Robin Lopez",
+    "offensive_raptor": -1.85418231,
+    "defensive_raptor": -0.174085893,
+    "total_raptor": -2.028268203
+  },
+  {
+    "player_name": "Jonas Jerebko",
+    "offensive_raptor": -0.469132729,
+    "defensive_raptor": -1.560970384,
+    "total_raptor": -2.030103113
+  },
+  {
+    "player_name": "E'Twaun Moore",
+    "offensive_raptor": 0.172944626,
+    "defensive_raptor": -2.214975388,
+    "total_raptor": -2.042030762
+  },
+  {
+    "player_name": "Doug McDermott",
+    "offensive_raptor": 0.252855151,
+    "defensive_raptor": -2.306184714,
+    "total_raptor": -2.053329563
+  },
+  {
+    "player_name": "Chandler Hutchison",
+    "offensive_raptor": -3.096188774,
+    "defensive_raptor": 1.038031429,
+    "total_raptor": -2.058157345
+  },
+  {
+    "player_name": "Cameron Reynolds",
+    "offensive_raptor": -0.103799301,
+    "defensive_raptor": -1.963860629,
+    "total_raptor": -2.06765993
+  },
+  {
+    "player_name": "Jabari Parker",
+    "offensive_raptor": -1.258550905,
+    "defensive_raptor": -0.80977331,
+    "total_raptor": -2.068324215
+  },
+  {
+    "player_name": "Luke Kennard",
+    "offensive_raptor": 0.067435285,
+    "defensive_raptor": -2.139019085,
+    "total_raptor": -2.071583799
+  },
+  {
+    "player_name": "Ekpe Udoh",
+    "offensive_raptor": -0.570515759,
+    "defensive_raptor": -1.501460309,
+    "total_raptor": -2.071976068
+  },
+  {
+    "player_name": "DeAndre' Bembry",
+    "offensive_raptor": -3.15084518,
+    "defensive_raptor": 1.067530148,
+    "total_raptor": -2.083315032
+  },
+  {
+    "player_name": "Rajon Rondo",
+    "offensive_raptor": -0.70369921,
+    "defensive_raptor": -1.39249562,
+    "total_raptor": -2.09619483
+  },
+  {
+    "player_name": "Wilson Chandler",
+    "offensive_raptor": -1.498671296,
+    "defensive_raptor": -0.604789925,
+    "total_raptor": -2.103461221
+  },
+  {
+    "player_name": "Zach Collins",
+    "offensive_raptor": -1.545185138,
+    "defensive_raptor": -0.574027183,
+    "total_raptor": -2.119212321
+  },
+  {
+    "player_name": "Trae Young",
+    "offensive_raptor": 2.396498544,
+    "defensive_raptor": -4.517485888,
+    "total_raptor": -2.120987345
+  },
+  {
+    "player_name": "John Wall",
+    "offensive_raptor": -0.260646294,
+    "defensive_raptor": -1.862955919,
+    "total_raptor": -2.123602213
+  },
+  {
+    "player_name": "De'Anthony Melton",
+    "offensive_raptor": -2.509879376,
+    "defensive_raptor": 0.368603444,
+    "total_raptor": -2.141275932
+  },
+  {
+    "player_name": "Johnathan Williams",
+    "offensive_raptor": -0.792988622,
+    "defensive_raptor": -1.358993396,
+    "total_raptor": -2.151982017
+  },
+  {
+    "player_name": "Alex Abrines",
+    "offensive_raptor": -4.040156587,
+    "defensive_raptor": 1.885618356,
+    "total_raptor": -2.154538232
+  },
+  {
+    "player_name": "Dwyane Wade",
+    "offensive_raptor": -0.062372499,
+    "defensive_raptor": -2.11506938,
+    "total_raptor": -2.177441879
+  },
+  {
+    "player_name": "Gerald Green",
+    "offensive_raptor": -0.026391463,
+    "defensive_raptor": -2.152782816,
+    "total_raptor": -2.179174279
+  },
+  {
+    "player_name": "Wes Iwundu",
+    "offensive_raptor": -2.771323823,
+    "defensive_raptor": 0.578032267,
+    "total_raptor": -2.193291556
+  },
+  {
+    "player_name": "Trevor Ariza",
+    "offensive_raptor": -0.217655077,
+    "defensive_raptor": -1.978481824,
+    "total_raptor": -2.196136901
+  },
+  {
+    "player_name": "Shaun Livingston",
+    "offensive_raptor": -1.192036925,
+    "defensive_raptor": -1.014206717,
+    "total_raptor": -2.206243642
+  },
+  {
+    "player_name": "Walter Lemon Jr.",
+    "offensive_raptor": -1.29920714,
+    "defensive_raptor": -0.93193753,
+    "total_raptor": -2.23114467
+  },
+  {
+    "player_name": "Reggie Bullock",
+    "offensive_raptor": -1.085647962,
+    "defensive_raptor": -1.15629016,
+    "total_raptor": -2.241938121
+  },
+  {
+    "player_name": "Deandre Ayton",
+    "offensive_raptor": -0.616975515,
+    "defensive_raptor": -1.675566944,
+    "total_raptor": -2.292542459
+  },
+  {
+    "player_name": "Kent Bazemore",
+    "offensive_raptor": -2.895144449,
+    "defensive_raptor": 0.599508225,
+    "total_raptor": -2.295636223
+  },
+  {
+    "player_name": "Chris Boucher",
+    "offensive_raptor": 0.48819498,
+    "defensive_raptor": -2.82250987,
+    "total_raptor": -2.33431489
+  },
+  {
+    "player_name": "Cheick Diallo",
+    "offensive_raptor": -1.869400078,
+    "defensive_raptor": -0.468058049,
+    "total_raptor": -2.337458127
+  },
+  {
+    "player_name": "Miles Bridges",
+    "offensive_raptor": -1.625593244,
+    "defensive_raptor": -0.719879699,
+    "total_raptor": -2.345472944
+  },
+  {
+    "player_name": "Anthony Tolliver",
+    "offensive_raptor": -1.868123827,
+    "defensive_raptor": -0.477870059,
+    "total_raptor": -2.345993885
+  },
+  {
+    "player_name": "Salah Mejri",
+    "offensive_raptor": -1.710719633,
+    "defensive_raptor": -0.638443916,
+    "total_raptor": -2.349163549
+  },
+  {
+    "player_name": "Damyean Dotson",
+    "offensive_raptor": -1.152779761,
+    "defensive_raptor": -1.214911025,
+    "total_raptor": -2.367690786
+  },
+  {
+    "player_name": "Mario Hezonja",
+    "offensive_raptor": -2.321911419,
+    "defensive_raptor": -0.061274746,
+    "total_raptor": -2.383186166
+  },
+  {
+    "player_name": "Tim Frazier",
+    "offensive_raptor": -0.114429746,
+    "defensive_raptor": -2.315742369,
+    "total_raptor": -2.430172114
+  },
+  {
+    "player_name": "Thon Maker",
+    "offensive_raptor": -2.864063999,
+    "defensive_raptor": 0.433290743,
+    "total_raptor": -2.430773256
+  },
+  {
+    "player_name": "Dwayne Bacon",
+    "offensive_raptor": 0.384196541,
+    "defensive_raptor": -2.816097783,
+    "total_raptor": -2.431901241
+  },
+  {
+    "player_name": "Alec Burks",
+    "offensive_raptor": -0.870407204,
+    "defensive_raptor": -1.59972592,
+    "total_raptor": -2.470133124
+  },
+  {
+    "player_name": "Justin Anderson",
+    "offensive_raptor": -2.607197469,
+    "defensive_raptor": 0.109253155,
+    "total_raptor": -2.497944315
+  },
+  {
+    "player_name": "Troy Daniels",
+    "offensive_raptor": -0.986345569,
+    "defensive_raptor": -1.526318799,
+    "total_raptor": -2.512664369
+  },
+  {
+    "player_name": "Jahlil Okafor",
+    "offensive_raptor": -1.540600661,
+    "defensive_raptor": -0.976278683,
+    "total_raptor": -2.516879344
+  },
+  {
+    "player_name": "Austin Rivers",
+    "offensive_raptor": -1.636126542,
+    "defensive_raptor": -0.92384037,
+    "total_raptor": -2.559966912
+  },
+  {
+    "player_name": "Taurean Prince",
+    "offensive_raptor": -0.64387921,
+    "defensive_raptor": -1.926881787,
+    "total_raptor": -2.570760997
+  },
+  {
+    "player_name": "CJ Miles",
+    "offensive_raptor": -2.240008239,
+    "defensive_raptor": -0.34093107,
+    "total_raptor": -2.580939309
+  },
+  {
+    "player_name": "Jevon Carter",
+    "offensive_raptor": -3.00616592,
+    "defensive_raptor": 0.423373423,
+    "total_raptor": -2.582792497
+  },
+  {
+    "player_name": "Stanley Johnson",
+    "offensive_raptor": -4.832573743,
+    "defensive_raptor": 2.190022379,
+    "total_raptor": -2.642551364
+  },
+  {
+    "player_name": "Robert Williams III",
+    "offensive_raptor": -4.599509814,
+    "defensive_raptor": 1.914204638,
+    "total_raptor": -2.685305176
+  },
+  {
+    "player_name": "Allonzo Trier",
+    "offensive_raptor": -1.252446802,
+    "defensive_raptor": -1.451901546,
+    "total_raptor": -2.704348348
+  },
+  {
+    "player_name": "Zaza Pachulia",
+    "offensive_raptor": -2.443761422,
+    "defensive_raptor": -0.270853009,
+    "total_raptor": -2.714614431
+  },
+  {
+    "player_name": "Ante Zizic",
+    "offensive_raptor": -2.07340073,
+    "defensive_raptor": -0.690914256,
+    "total_raptor": -2.764314986
+  },
+  {
+    "player_name": "JaMychal Green",
+    "offensive_raptor": -1.011331901,
+    "defensive_raptor": -1.805300383,
+    "total_raptor": -2.816632284
+  },
+  {
+    "player_name": "Marcin Gortat",
+    "offensive_raptor": -3.579926533,
+    "defensive_raptor": 0.746637246,
+    "total_raptor": -2.833289287
+  },
+  {
+    "player_name": "Josh Jackson",
+    "offensive_raptor": -3.391344224,
+    "defensive_raptor": 0.553359988,
+    "total_raptor": -2.837984236
+  },
+  {
+    "player_name": "Marvin Bagley III",
+    "offensive_raptor": -1.066198841,
+    "defensive_raptor": -1.807855582,
+    "total_raptor": -2.874054422
+  },
+  {
+    "player_name": "Greg Monroe",
+    "offensive_raptor": -3.081646793,
+    "defensive_raptor": 0.148267717,
+    "total_raptor": -2.933379076
+  },
+  {
+    "player_name": "Emmanuel Mudiay",
+    "offensive_raptor": -0.986159407,
+    "defensive_raptor": -1.999553974,
+    "total_raptor": -2.985713381
+  },
+  {
+    "player_name": "Christian Wood",
+    "offensive_raptor": -1.151757044,
+    "defensive_raptor": -1.863515307,
+    "total_raptor": -3.015272351
+  },
+  {
+    "player_name": "Julian Washburn",
+    "offensive_raptor": -4.4965226,
+    "defensive_raptor": 1.463291726,
+    "total_raptor": -3.033230874
+  },
+  {
+    "player_name": "Sterling Brown",
+    "offensive_raptor": -1.982649491,
+    "defensive_raptor": -1.070115217,
+    "total_raptor": -3.052764708
+  },
+  {
+    "player_name": "Jonah Bolden",
+    "offensive_raptor": -2.778252583,
+    "defensive_raptor": -0.310637221,
+    "total_raptor": -3.088889804
+  },
+  {
+    "player_name": "MarShon Brooks",
+    "offensive_raptor": -1.744476153,
+    "defensive_raptor": -1.344738169,
+    "total_raptor": -3.089214322
+  },
+  {
+    "player_name": "Glenn Robinson III",
+    "offensive_raptor": -3.75045023,
+    "defensive_raptor": 0.622275773,
+    "total_raptor": -3.128174458
+  },
+  {
+    "player_name": "Markieff Morris",
+    "offensive_raptor": -2.199729773,
+    "defensive_raptor": -0.941182546,
+    "total_raptor": -3.14091232
+  },
+  {
+    "player_name": "Terrance Ferguson",
+    "offensive_raptor": -1.56247255,
+    "defensive_raptor": -1.579597721,
+    "total_raptor": -3.142070271
+  },
+  {
+    "player_name": "Pau Gasol",
+    "offensive_raptor": -2.512898525,
+    "defensive_raptor": -0.629995788,
+    "total_raptor": -3.142894313
+  },
+  {
+    "player_name": "Jordan Bell",
+    "offensive_raptor": -3.034255727,
+    "defensive_raptor": -0.115807903,
+    "total_raptor": -3.15006363
+  },
+  {
+    "player_name": "Sam Dekker",
+    "offensive_raptor": -1.339908091,
+    "defensive_raptor": -1.842995293,
+    "total_raptor": -3.182903384
+  },
+  {
+    "player_name": "Georges Niang",
+    "offensive_raptor": -0.702319561,
+    "defensive_raptor": -2.483711635,
+    "total_raptor": -3.186031196
+  },
+  {
+    "player_name": "Rodions Kurucs",
+    "offensive_raptor": -2.627836564,
+    "defensive_raptor": -0.566334731,
+    "total_raptor": -3.194171296
+  },
+  {
+    "player_name": "Markelle Fultz",
+    "offensive_raptor": -3.00506014,
+    "defensive_raptor": -0.205591388,
+    "total_raptor": -3.210651528
+  },
+  {
+    "player_name": "Lance Stephenson",
+    "offensive_raptor": -1.110667412,
+    "defensive_raptor": -2.10793094,
+    "total_raptor": -3.218598352
+  },
+  {
+    "player_name": "Wendell Carter Jr.",
+    "offensive_raptor": -4.669539374,
+    "defensive_raptor": 1.421382854,
+    "total_raptor": -3.24815652
+  },
+  {
+    "player_name": "James Johnson",
+    "offensive_raptor": -2.539487051,
+    "defensive_raptor": -0.719884689,
+    "total_raptor": -3.259371739
+  },
+  {
+    "player_name": "Gary Clark",
+    "offensive_raptor": -1.129099292,
+    "defensive_raptor": -2.132590335,
+    "total_raptor": -3.261689627
+  },
+  {
+    "player_name": "James Ennis III",
+    "offensive_raptor": -1.326425683,
+    "defensive_raptor": -1.944100919,
+    "total_raptor": -3.270526602
+  },
+  {
+    "player_name": "Milos Teodosic",
+    "offensive_raptor": 0.253701141,
+    "defensive_raptor": -3.62310483,
+    "total_raptor": -3.369403689
+  },
+  {
+    "player_name": "Solomon Hill",
+    "offensive_raptor": -3.010351613,
+    "defensive_raptor": -0.385921876,
+    "total_raptor": -3.396273489
+  },
+  {
+    "player_name": "Omari Spellman",
+    "offensive_raptor": -2.871557445,
+    "defensive_raptor": -0.537221057,
+    "total_raptor": -3.408778502
+  },
+  {
+    "player_name": "Alfonzo McKinnie",
+    "offensive_raptor": -1.240892418,
+    "defensive_raptor": -2.236442061,
+    "total_raptor": -3.477334479
+  },
+  {
+    "player_name": "Isaiah Briscoe",
+    "offensive_raptor": -3.956660732,
+    "defensive_raptor": 0.452836172,
+    "total_raptor": -3.503824559
+  },
+  {
+    "player_name": "Troy Brown Jr.",
+    "offensive_raptor": -1.595157892,
+    "defensive_raptor": -1.95482749,
+    "total_raptor": -3.549985382
+  },
+  {
+    "player_name": "Chasson Randle",
+    "offensive_raptor": -1.307959741,
+    "defensive_raptor": -2.243482558,
+    "total_raptor": -3.551442298
+  },
+  {
+    "player_name": "Hamidou Diallo",
+    "offensive_raptor": -2.005642308,
+    "defensive_raptor": -1.622405448,
+    "total_raptor": -3.628047756
+  },
+  {
+    "player_name": "OG Anunoby",
+    "offensive_raptor": -3.349478071,
+    "defensive_raptor": -0.297940427,
+    "total_raptor": -3.647418498
+  },
+  {
+    "player_name": "Mike Scott",
+    "offensive_raptor": -1.470213942,
+    "defensive_raptor": -2.182690039,
+    "total_raptor": -3.652903981
+  },
+  {
+    "player_name": "Lorenzo Brown",
+    "offensive_raptor": -4.739669439,
+    "defensive_raptor": 1.066411151,
+    "total_raptor": -3.673258289
+  },
+  {
+    "player_name": "Tony Parker",
+    "offensive_raptor": -0.617673951,
+    "defensive_raptor": -3.059091862,
+    "total_raptor": -3.676765813
+  },
+  {
+    "player_name": "JR Smith",
+    "offensive_raptor": -3.064124219,
+    "defensive_raptor": -0.648625625,
+    "total_raptor": -3.712749844
+  },
+  {
+    "player_name": "Tyler Dorsey",
+    "offensive_raptor": -0.600858466,
+    "defensive_raptor": -3.211257901,
+    "total_raptor": -3.812116367
+  },
+  {
+    "player_name": "Brandon Knight",
+    "offensive_raptor": -2.67636313,
+    "defensive_raptor": -1.155871395,
+    "total_raptor": -3.832234525
+  },
+  {
+    "player_name": "Jonathon Simmons",
+    "offensive_raptor": -3.233514435,
+    "defensive_raptor": -0.6192186,
+    "total_raptor": -3.852733035
+  },
+  {
+    "player_name": "Kosta Koufos",
+    "offensive_raptor": -3.849104212,
+    "defensive_raptor": -0.016915344,
+    "total_raptor": -3.866019555
+  },
+  {
+    "player_name": "Jarell Martin",
+    "offensive_raptor": -2.722822535,
+    "defensive_raptor": -1.149719652,
+    "total_raptor": -3.872542188
+  },
+  {
+    "player_name": "Keita Bates-Diop",
+    "offensive_raptor": -3.448567504,
+    "defensive_raptor": -0.428779093,
+    "total_raptor": -3.877346597
+  },
+  {
+    "player_name": "Cedi Osman",
+    "offensive_raptor": -1.10184624,
+    "defensive_raptor": -2.840112993,
+    "total_raptor": -3.941959233
+  },
+  {
+    "player_name": "Henry Ellenson",
+    "offensive_raptor": -0.783993151,
+    "defensive_raptor": -3.237114485,
+    "total_raptor": -4.021107636
+  },
+  {
+    "player_name": "Harry Giles III",
+    "offensive_raptor": -3.489913876,
+    "defensive_raptor": -0.605261534,
+    "total_raptor": -4.09517541
+  },
+  {
+    "player_name": "Khyri Thomas",
+    "offensive_raptor": -4.965316139,
+    "defensive_raptor": 0.833979368,
+    "total_raptor": -4.13133677
+  },
+  {
+    "player_name": "Meyers Leonard",
+    "offensive_raptor": 0.119180402,
+    "defensive_raptor": -4.257369806,
+    "total_raptor": -4.138189404
+  },
+  {
+    "player_name": "Willy Hernangomez",
+    "offensive_raptor": -0.134985064,
+    "defensive_raptor": -4.00704364,
+    "total_raptor": -4.142028704
+  },
+  {
+    "player_name": "Will Barton",
+    "offensive_raptor": -1.940068143,
+    "defensive_raptor": -2.2051097,
+    "total_raptor": -4.145177843
+  },
+  {
+    "player_name": "Dante Cunningham",
+    "offensive_raptor": -2.148799324,
+    "defensive_raptor": -2.011308859,
+    "total_raptor": -4.160108183
+  },
+  {
+    "player_name": "Trey Lyles",
+    "offensive_raptor": -3.561724153,
+    "defensive_raptor": -0.602681945,
+    "total_raptor": -4.164406098
+  },
+  {
+    "player_name": "Cameron Payne",
+    "offensive_raptor": -1.673908047,
+    "defensive_raptor": -2.508537744,
+    "total_raptor": -4.18244579
+  },
+  {
+    "player_name": "Kyle O'Quinn",
+    "offensive_raptor": -1.648890045,
+    "defensive_raptor": -2.54795158,
+    "total_raptor": -4.196841626
+  },
+  {
+    "player_name": "Jalen Jones",
+    "offensive_raptor": -1.207916759,
+    "defensive_raptor": -3.001245579,
+    "total_raptor": -4.209162338
+  },
+  {
+    "player_name": "Ben McLemore",
+    "offensive_raptor": -1.419810692,
+    "defensive_raptor": -2.808181835,
+    "total_raptor": -4.227992526
+  },
+  {
+    "player_name": "Sindarius Thornwell",
+    "offensive_raptor": -5.725348722,
+    "defensive_raptor": 1.481276575,
+    "total_raptor": -4.244072146
+  },
+  {
+    "player_name": "Frank Ntilikina",
+    "offensive_raptor": -3.917653241,
+    "defensive_raptor": -0.355674683,
+    "total_raptor": -4.273327923
+  },
+  {
+    "player_name": "Malik Monk",
+    "offensive_raptor": -0.571988596,
+    "defensive_raptor": -3.723304357,
+    "total_raptor": -4.295292954
+  },
+  {
+    "player_name": "Jerian Grant",
+    "offensive_raptor": -3.301950863,
+    "defensive_raptor": -1.0168385,
+    "total_raptor": -4.318789363
+  },
+  {
+    "player_name": "Edmond Sumner",
+    "offensive_raptor": -3.669208857,
+    "defensive_raptor": -0.699288749,
+    "total_raptor": -4.368497607
+  },
+  {
+    "player_name": "Svi Mykhailiuk",
+    "offensive_raptor": -3.547898766,
+    "defensive_raptor": -0.867471286,
+    "total_raptor": -4.415370053
+  },
+  {
+    "player_name": "Miles Plumlee",
+    "offensive_raptor": -1.419462114,
+    "defensive_raptor": -3.017125308,
+    "total_raptor": -4.436587422
+  },
+  {
+    "player_name": "Bobby Portis",
+    "offensive_raptor": -1.190034951,
+    "defensive_raptor": -3.272902307,
+    "total_raptor": -4.462937258
+  },
+  {
+    "player_name": "Isaiah Canaan",
+    "offensive_raptor": -1.951873819,
+    "defensive_raptor": -2.572676199,
+    "total_raptor": -4.524550018
+  },
+  {
+    "player_name": "Jarrett Allen",
+    "offensive_raptor": -1.506668479,
+    "defensive_raptor": -3.071319091,
+    "total_raptor": -4.57798757
+  },
+  {
+    "player_name": "Dillon Brooks",
+    "offensive_raptor": -3.057621338,
+    "defensive_raptor": -1.619926799,
+    "total_raptor": -4.677548137
+  },
+  {
+    "player_name": "Frank Jackson",
+    "offensive_raptor": -1.946423979,
+    "defensive_raptor": -2.759810357,
+    "total_raptor": -4.706234336
+  },
+  {
+    "player_name": "Drew Eubanks",
+    "offensive_raptor": -3.871943356,
+    "defensive_raptor": -0.83507942,
+    "total_raptor": -4.707022776
+  },
+  {
+    "player_name": "Moritz Wagner",
+    "offensive_raptor": -4.519796393,
+    "defensive_raptor": -0.230223971,
+    "total_raptor": -4.750020365
+  },
+  {
+    "player_name": "Michael Beasley",
+    "offensive_raptor": -1.619436281,
+    "defensive_raptor": -3.183448199,
+    "total_raptor": -4.80288448
+  },
+  {
+    "player_name": "Patrick Patterson",
+    "offensive_raptor": -3.428377251,
+    "defensive_raptor": -1.388800043,
+    "total_raptor": -4.817177295
+  },
+  {
+    "player_name": "Shelvin Mack",
+    "offensive_raptor": -2.82374715,
+    "defensive_raptor": -2.007175374,
+    "total_raptor": -4.830922524
+  },
+  {
+    "player_name": "Wesley Johnson",
+    "offensive_raptor": -3.950371011,
+    "defensive_raptor": -0.889150139,
+    "total_raptor": -4.83952115
+  },
+  {
+    "player_name": "Patrick McCaw",
+    "offensive_raptor": -2.742093538,
+    "defensive_raptor": -2.099465634,
+    "total_raptor": -4.841559171
+  },
+  {
+    "player_name": "Andrew Harrison",
+    "offensive_raptor": -2.622265471,
+    "defensive_raptor": -2.2538182,
+    "total_raptor": -4.87608367
+  },
+  {
+    "player_name": "Nik Stauskas",
+    "offensive_raptor": -1.733111749,
+    "defensive_raptor": -3.201755217,
+    "total_raptor": -4.934866966
+  },
+  {
+    "player_name": "Bismack Biyombo",
+    "offensive_raptor": -3.598418479,
+    "defensive_raptor": -1.387715775,
+    "total_raptor": -4.986134254
+  },
+  {
+    "player_name": "Elie Okobo",
+    "offensive_raptor": -3.547277223,
+    "defensive_raptor": -1.451246091,
+    "total_raptor": -4.998523314
+  },
+  {
+    "player_name": "Carmelo Anthony",
+    "offensive_raptor": -2.506433108,
+    "defensive_raptor": -2.628393889,
+    "total_raptor": -5.134826997
+  },
+  {
+    "player_name": "Ryan Anderson",
+    "offensive_raptor": -3.32983319,
+    "defensive_raptor": -1.812325253,
+    "total_raptor": -5.142158443
+  },
+  {
+    "player_name": "Lonnie Walker IV",
+    "offensive_raptor": -5.946924155,
+    "defensive_raptor": 0.725268972,
+    "total_raptor": -5.221655183
+  },
+  {
+    "player_name": "Quinn Cook",
+    "offensive_raptor": -1.147223023,
+    "defensive_raptor": -4.087641905,
+    "total_raptor": -5.234864928
+  },
+  {
+    "player_name": "Ian Clark",
+    "offensive_raptor": -2.235510458,
+    "defensive_raptor": -3.038161149,
+    "total_raptor": -5.273671607
+  },
+  {
+    "player_name": "Lance Thomas",
+    "offensive_raptor": -4.300825548,
+    "defensive_raptor": -1.011994244,
+    "total_raptor": -5.312819792
+  },
+  {
+    "player_name": "Isaiah Thomas",
+    "offensive_raptor": -4.449749402,
+    "defensive_raptor": -0.898724573,
+    "total_raptor": -5.348473975
+  },
+  {
+    "player_name": "Jodie Meeks",
+    "offensive_raptor": -2.282477871,
+    "defensive_raptor": -3.106025043,
+    "total_raptor": -5.388502914
+  },
+  {
+    "player_name": "John Jenkins",
+    "offensive_raptor": -2.393370306,
+    "defensive_raptor": -3.022955685,
+    "total_raptor": -5.416325991
+  },
+  {
+    "player_name": "Troy Williams",
+    "offensive_raptor": -2.475725521,
+    "defensive_raptor": -2.981952804,
+    "total_raptor": -5.457678325
+  },
+  {
+    "player_name": "Ivan Rabb",
+    "offensive_raptor": -1.177666185,
+    "defensive_raptor": -4.297509109,
+    "total_raptor": -5.475175294
+  },
+  {
+    "player_name": "Alex Poythress",
+    "offensive_raptor": -3.705728877,
+    "defensive_raptor": -1.951923803,
+    "total_raptor": -5.657652681
+  },
+  {
+    "player_name": "Rawle Alkins",
+    "offensive_raptor": -3.538436418,
+    "defensive_raptor": -2.161881071,
+    "total_raptor": -5.700317489
+  },
+  {
+    "player_name": "Chandler Parsons",
+    "offensive_raptor": -3.733733084,
+    "defensive_raptor": -1.993127317,
+    "total_raptor": -5.726860401
+  },
+  {
+    "player_name": "Frank Mason",
+    "offensive_raptor": -2.125624611,
+    "defensive_raptor": -3.616831661,
+    "total_raptor": -5.742456272
+  },
+  {
+    "player_name": "Deng Adel",
+    "offensive_raptor": -6.33371243,
+    "defensive_raptor": 0.558883109,
+    "total_raptor": -5.774829321
+  },
+  {
+    "player_name": "C.J. Williams",
+    "offensive_raptor": -4.108031927,
+    "defensive_raptor": -1.728476058,
+    "total_raptor": -5.836507985
+  },
+  {
+    "player_name": "Yuta Watanabe",
+    "offensive_raptor": -4.742452091,
+    "defensive_raptor": -1.160194338,
+    "total_raptor": -5.902646429
+  },
+  {
+    "player_name": "Dragan Bender",
+    "offensive_raptor": -4.071935821,
+    "defensive_raptor": -1.847934981,
+    "total_raptor": -5.919870802
+  },
+  {
+    "player_name": "Dwight Howard",
+    "offensive_raptor": -2.06581652,
+    "defensive_raptor": -3.896792735,
+    "total_raptor": -5.962609255
+  },
+  {
+    "player_name": "Jon Leuer",
+    "offensive_raptor": -4.475204259,
+    "defensive_raptor": -1.632717212,
+    "total_raptor": -6.107921471
+  },
+  {
+    "player_name": "Jaylen Adams",
+    "offensive_raptor": -2.377643964,
+    "defensive_raptor": -3.734729095,
+    "total_raptor": -6.112373059
+  },
+  {
+    "player_name": "Ray Spalding",
+    "offensive_raptor": -4.337784552,
+    "defensive_raptor": -1.816671582,
+    "total_raptor": -6.154456134
+  },
+  {
+    "player_name": "Mo Bamba",
+    "offensive_raptor": -5.257799221,
+    "defensive_raptor": -0.9367748,
+    "total_raptor": -6.194574021
+  },
+  {
+    "player_name": "Wayne Selden",
+    "offensive_raptor": -3.022775657,
+    "defensive_raptor": -3.244763307,
+    "total_raptor": -6.267538964
+  },
+  {
+    "player_name": "Cristiano Felicio",
+    "offensive_raptor": -2.408120061,
+    "defensive_raptor": -3.8861379,
+    "total_raptor": -6.294257961
+  },
+  {
+    "player_name": "Jason Smith",
+    "offensive_raptor": -5.803973573,
+    "defensive_raptor": -0.713467143,
+    "total_raptor": -6.517440716
+  },
+  {
+    "player_name": "Dirk Nowitzki",
+    "offensive_raptor": -2.608596825,
+    "defensive_raptor": -3.963246301,
+    "total_raptor": -6.571843127
+  },
+  {
+    "player_name": "Timothe Luwawu-Cabarrot",
+    "offensive_raptor": -3.899946948,
+    "defensive_raptor": -2.758354835,
+    "total_raptor": -6.658301783
+  },
+  {
+    "player_name": "Johnathan Motley",
+    "offensive_raptor": -4.509822571,
+    "defensive_raptor": -2.154492902,
+    "total_raptor": -6.664315473
+  },
+  {
+    "player_name": "Abdel Nader",
+    "offensive_raptor": -4.399647063,
+    "defensive_raptor": -2.311731911,
+    "total_raptor": -6.711378974
+  },
+  {
+    "player_name": "Jose Calderon",
+    "offensive_raptor": -4.64479003,
+    "defensive_raptor": -2.148448471,
+    "total_raptor": -6.793238501
+  },
+  {
+    "player_name": "Duncan Robinson",
+    "offensive_raptor": -4.507934816,
+    "defensive_raptor": -2.301671933,
+    "total_raptor": -6.809606749
+  },
+  {
+    "player_name": "Jamal Crawford",
+    "offensive_raptor": -1.005402042,
+    "defensive_raptor": -5.81085017,
+    "total_raptor": -6.816252212
+  },
+  {
+    "player_name": "Antonio Blakeney",
+    "offensive_raptor": -3.059169905,
+    "defensive_raptor": -4.042692391,
+    "total_raptor": -7.101862295
+  },
+  {
+    "player_name": "Jacob Evans",
+    "offensive_raptor": -5.150322376,
+    "defensive_raptor": -2.351205233,
+    "total_raptor": -7.501527609
+  },
+  {
+    "player_name": "Skal Labissiere",
+    "offensive_raptor": -3.545238516,
+    "defensive_raptor": -4.002884443,
+    "total_raptor": -7.548122959
+  },
+  {
+    "player_name": "James Nunnally",
+    "offensive_raptor": 0.581419132,
+    "defensive_raptor": -8.248053677,
+    "total_raptor": -7.666634545
+  },
+  {
+    "player_name": "Brandon Sampson",
+    "offensive_raptor": -3.323893552,
+    "defensive_raptor": -4.631991158,
+    "total_raptor": -7.95588471
+  },
+  {
+    "player_name": "Jerryd Bayless",
+    "offensive_raptor": -1.929941947,
+    "defensive_raptor": -6.130163101,
+    "total_raptor": -8.060105048
+  },
+  {
+    "player_name": "Kevin Knox",
+    "offensive_raptor": -3.822369778,
+    "defensive_raptor": -4.319854979,
+    "total_raptor": -8.142224757
+  },
+  {
+    "player_name": "Gary Trent Jr.",
+    "offensive_raptor": -5.128380081,
+    "defensive_raptor": -3.198877037,
+    "total_raptor": -8.327257118
+  },
+  {
+    "player_name": "Collin Sexton",
+    "offensive_raptor": -2.839530954,
+    "defensive_raptor": -5.508370226,
+    "total_raptor": -8.34790118
+  },
+  {
+    "player_name": "Chimezie Metu",
+    "offensive_raptor": -9.110255606,
+    "defensive_raptor": 0.249033507,
+    "total_raptor": -8.861222099
+  },
+  {
+    "player_name": "Malachi Richardson",
+    "offensive_raptor": -6.288002729,
+    "defensive_raptor": -3.166462712,
+    "total_raptor": -9.454465441
+  },
+  {
+    "player_name": "Anfernee Simons",
+    "offensive_raptor": -3.653617057,
+    "defensive_raptor": -5.904937781,
+    "total_raptor": -9.558554838
+  },
+  {
+    "player_name": "Caleb Swanigan",
+    "offensive_raptor": -10.09405016,
+    "defensive_raptor": 0.326278066,
+    "total_raptor": -9.767772098
+  },
+  {
+    "player_name": "Marquese Chriss",
+    "offensive_raptor": -6.239940788,
+    "defensive_raptor": -4.038366115,
+    "total_raptor": -10.2783069
+  },
+  {
+    "player_name": "Grayson Allen",
+    "offensive_raptor": -4.788103622,
+    "defensive_raptor": -5.549027311,
+    "total_raptor": -10.33713093
+  },
+  {
+    "player_name": "Dairis Bertans",
+    "offensive_raptor": -5.792375507,
+    "defensive_raptor": -5.219271608,
+    "total_raptor": -11.01164712
+  },
+  {
+    "player_name": "Channing Frye",
+    "offensive_raptor": -3.533367487,
+    "defensive_raptor": -7.891168839,
+    "total_raptor": -11.42453633
+  },
+  {
+    "player_name": "Jared Terrell",
+    "offensive_raptor": -8.426033139,
+    "defensive_raptor": -3.417257965,
+    "total_raptor": -11.8432911
+  }
+]
